@@ -1,0 +1,144 @@
+// Place all the styles related to the sports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// For the cancel search link
+
+// Color Palette
+// #ff5714
+// #66c3ff
+// #dce1e9
+// #0f4c5c
+// #2e7689
+
+.hidden {
+  display: none
+}
+
+#sports-index-container, #sport-show-container {
+  height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(http://atxsportsphotos.com/assets_d/54976/web_media/3ds_grass_texture241_173.jpg);
+  background-size:cover;
+  z-index: -1;
+  color: #dce1e9;
+}
+
+h3 {
+text-align: center;
+padding: 5px;
+padding-top: 20px;
+}
+
+#sports-buttons-container, #sports-type-container {
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  -webkit-column-count: 4; /* Chrome, Safari, Opera */
+  -moz-column-count: 4; /* Firefox */
+  column-count: 4;
+  width: 60%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.submit-sport-form {
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.sport-button {
+  background-color: rgba(0, 0, 0, 0);
+  border:3px solid white;
+  margin: 5%;
+  margin-top: 7%;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  min-width: 175px;
+  min-height: 175px;
+}
+
+.sport-button:hover {
+  transform: scale(1.09);
+}
+
+.sport-button:active {
+  transform: translateY(4px);
+}
+
+#sports-type-container {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  width: 40%
+}
+
+#sports-type-container button {
+  margin: 5%;
+}
+
+#Tennis-button {
+  background-image: image-url("sport_icons/tennis-ball.svg");
+  // src: font-url("/assets/images/icomoon.eot");
+  // src: font-url("/assets/icomoon.eot?#iefix") format("embedded-opentype"), font-url("/assets/icomoon.svg#icomoon") format("svg"),
+}
+
+#Soccer-button {
+  background-image: image-url("sport_icons/soccer.svg")
+}
+
+#Badminton-button {
+  background-image: image-url("sport_icons/badminton.svg")
+}
+
+#TableTennis-button {
+  background-image: image-url("sport_icons/ping-pong.svg")
+}
+
+#Basketball-button {
+  background-image: image-url("sport_icons/basketball.svg")
+}
+
+#Volleyball-button {
+  background-image: image-url("sport_icons/volleyball.svg")
+}
+
+#FlagFootball-button {
+  background-image: image-url("sport_icons/flag_football.svg")
+}
+
+#Bowling-button {
+  background-image: image-url("sport_icons/bowling.svg")
+}
+
+#Rails-button {
+  background-image: image-url("sport_icons/browser.svg")
+}
+
+#Golf-button {
+  background-image: image-url("sport_icons/golf.svg")
+}
+
+#UltimateFrisbee-button {
+  background-image: image-url("sport_icons/frisbee.svg")
+}
+
+#Billiards-button {
+  background-image: image-url("sport_icons/billiards.svg")
+}
+
+#sport-info-container {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#sport-description-container {
+  font-size: 1.5em;
+}
+
+#sport-video-container {
+  margin: 20px;
+}

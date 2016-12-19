@@ -1,0 +1,60 @@
+@import 'palette';
+// Color Palette
+// #ff5714;
+// #66c3ff;
+// #dce1e9;
+// #0f4c5c;
+// #2e7689;
+
+header {
+  width: 100%;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  padding: .2em;
+  color: #ff5714;
+  background-color: $color4;
+  border-bottom: 10px solid #ff5714;
+}
+
+header a, header a:visited{
+  color: #dce1e9;
+}
+
+header a:hover {
+  color: #66c3ff;
+}
+
+header img {
+  height: 2em;
+}
+
+.header-left {
+  font-size: 1.8em;
+  text-align: left;
+  width: 32%;
+  padding-left: 1%;
+}
+
+.header-middle {
+  font-size: 1.8em;
+  color: #dce1e9;
+  text-align: center;
+  width: 32%;
+}
+
+.header-right {
+  width: 32%;
+  font-size: 1.5em;
+  text-align: right;
+  padding-right: 1%;
+}
+
+
+
+// hr.style1 {
+// 	border-top: 1px solid #8c8b8b;
+//   margin-left: 0%;
+//   margin-right: 2%;
+// }
+//

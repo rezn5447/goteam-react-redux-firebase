@@ -1,0 +1,41 @@
+@import 'palette';
+
+
+
+.register-page-container {
+  margin: 0;
+  padding: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 50%), url(https://static.pexels.com/photos/29578/pexels-photo.jpg);
+  background-size:cover;
+  z-index: -1;
+}
+
+.register-div {
+  border-top: 1px solid gray;
+  margin-top: 4%;
+  padding-top: 4%;
+}
+
+.register-form {
+  font-size: 1.1em;
+  width: auto;
+  border: 1px solid gray;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 2em;
+  padding-top: 1em;
+  opacity: 0.85;
+}
+
+input{
+  margin-bottom: 10px;
+}

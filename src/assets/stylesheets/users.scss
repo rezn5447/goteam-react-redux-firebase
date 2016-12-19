@@ -1,0 +1,108 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user-show-page-container {
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 20%,rgba(0,0,0,0.6) 60%), url(http://atxsportsphotos.com/assets_d/54976/web_media/3ds_grass_texture241_173.jpg);
+  background-size:cover;
+  z-index: -1;
+  color: white;
+  padding: 30px;
+  padding-bottom: 60px;
+}
+#user-show-page-container h2{
+  margin: 0;
+}
+.user-show-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-left: 15px;
+  font-size: 1.5em;
+}
+
+.user-info-container {
+  margin-top:2%;
+  width: 40%;
+  margin-right:5%;
+  margin-left: 10%;
+}
+
+.user-info-container a {
+  color: white;
+}
+
+.user-info-container a:hover {
+  color: white;
+}
+
+.user-info-container .btn {
+  border: 1px solid white;
+}
+
+.user-info-container .btn:hover {
+  border: 1px solid white;
+}
+
+.matches-container a {
+  color: white;
+}
+
+.matches-container a:hover {
+  color: white;
+}
+
+.matches-container .btn {
+  border: 1px solid white;
+}
+
+.matches-container .btn:hover {
+  border: 1px solid white;
+}
+
+#stats-container {
+  border: 1px solid #ff5714;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 90%;
+  margin-top: 3%;
+}
+.matches-container {
+  margin-top:2%;
+  width: 40%;
+}
+
+.matches-container img {
+  width: .9em;
+  height: .9em;
+
+  margin-right: 3px;
+}
+
+.match-details-container {
+  margin-bottom: 3%;
+}
+
+.details-container {
+  margin-left: 1%;
+}
+
+.profile {
+  background-color: #0f4c5c;
+  border: 1px solid #ff5714;
+  color: #fff;
+  font-size: .9em;
+  border-radius: 5px;
+  padding: 3px;
+  padding-right: 4px;
+  padding-left: 4px
+}
+
+.profile-pic img{
+  border-radius: 20%;
+  width: 15em;
+  height: 15em;
+  border: 3px solid #ff5714;
+  margin-bottom: 1%;
+}
