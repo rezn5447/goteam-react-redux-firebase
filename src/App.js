@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css'
 import * as firebase from 'firebase';
 import logo from './assets/images/logo.svg';
 import './assets/stylesheets/App.scss';
@@ -33,10 +34,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React! You are going 42 mph!</h2>
-        </div>
+      <div className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+      <h2>Welcome to React! You are going 2134321 mph!</h2>
+      </div>
       </div>
     );
   }
