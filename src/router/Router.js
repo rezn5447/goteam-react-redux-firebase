@@ -43,7 +43,6 @@ render(){
           <Route path={"profile"} component={Profile}/>
           <Route path={"login"} component={Login}/>
           <Route path={"register"} component={Register}/>
-          <Route path={"users/:id"} component={Profile}/>
         </Route>
       </Route>
     </Router>
