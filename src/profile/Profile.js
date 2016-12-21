@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { ref } from '../helpers/database';
 
 function UserGreeting(props){
   return <h1>Welcome Back {props.user.name}</h1>
@@ -22,19 +23,29 @@ class Profile extends Component {
   constructor(){
     super();
     this.state = {
-      user: {}
+      user: {name: ''}
     }
   }
 
 componentDidMount(){
-  const userRef = ref.child('user/0');
-  
+  const userRef = ref.child('users/0');
+  userRef.on('value', snap =>{
+    this.setState({
+      user: snap.val()
+    })
+  });
 }
 render(){
   return(
     <div className="col-md-4">
       <p>This is the Profile Component!</p>
       <Greeting isLoggedIn={false} />
+      <div className="col-md-3 mdb-color darken-2">
+        <p>First:</p>  <p>{this.state.user.first_name}</p>
+        <p>Last:</p>   <p>{this.state.user.last_name}</p>
+        <p>Email:</p>  <p>{this.state.user.email}</p>
+        <p>City:</p>   <p>{this.state.user.city}</p>
+      </div>
     </div>
     );
   }
