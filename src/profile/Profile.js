@@ -24,6 +24,7 @@ render(){
   return(
     <div className="col-md-4">
       <p>This is the Profile Component!</p>
+      <Greeting isLoggedIn={false} />
     </div>
     );
   }
