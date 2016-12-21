@@ -19,7 +19,17 @@ function Greeting(props){
 }
 
 class Profile extends Component {
+  constructor(){
+    super();
+    this.state = {
+      user: {}
+    }
+  }
 
+componentDidMount(){
+  const userRef = ref.child('user/0');
+  
+}
 render(){
   return(
     <div className="col-md-4">
