@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from '../assets/images/logo.svg';
 import '../assets/stylesheets/App.scss';
-import { ref } from '../helpers/database'
-import Header from '../components/Header'
+import { ref } from '../helpers/database';
+import Header from '../components/Header';
 
 
 class MainLayout extends Component {
