@@ -41,10 +41,10 @@ render(){
       <p>This is the Profile Component!</p>
       <Greeting isLoggedIn={false} />
       <div className="col-md-3 mdb-color darken-2">
-        <p>First:</p>  <p>{this.state.user.first_name}</p>
-        <p>Last:</p>   <p>{this.state.user.last_name}</p>
-        <p>Email:</p>  <p>{this.state.user.email}</p>
-        <p>City:</p>   <p>{this.state.user.city}</p>
+        <p>First: {this.state.user.first_name}</p>
+        <p>Last: {this.state.user.last_name}</p>
+        <p>Email: {this.state.user.email}</p>
+        <p>City: {this.state.user.city}</p>
       </div>
     </div>
     );

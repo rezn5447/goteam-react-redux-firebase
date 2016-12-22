@@ -22,17 +22,32 @@ function Greeting(props){
 class Header extends Component{
   render(){
     return(
-      <header>
-      <Greeting isLoggedIn={true}/>
-      <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/register">Register</Link></li>
-      </ul>
-      </nav>
-      </header>
+      // <nav>
+      // <ul>
+      //   <li><Link to="/">Home</Link></li>
+      //   <li><Link to="/profile">Profile</Link></li>
+      //   <li><Link to="/login">Login</Link></li>
+      //   <li><Link to="/register">Register</Link></li>
+      // </ul>
+      // </nav>
+  <nav className="navbar navbar-light bg-faded">
+    <Link className="navbar-brand" to="/">Navbar</Link>
+    <ul className="nav navbar-nav">
+      <li className="nav-item active">
+        <Link className="nav-link" to="/">Home<span className="sr-only">(current)</span></Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/profile" className="nav-link">Profile</Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/login" className="nav-link">Login</Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/register" className="nav-link">Register</Link>
+      </li>
+    </ul>
+  </nav>
+
     );
   }
 }
