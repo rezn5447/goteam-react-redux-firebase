@@ -22,14 +22,11 @@ class MainLayout extends Component {
       });
     });
   }
+
   render() {
     return (
     <div className="MainLayout">
       <Header />
-        <div className="MainLayout-header">
-          <img src={logo} className="MainLayout-logo" alt="logo" />
-          <h2>Welcome to React! You are going {this.state.speed} mph!</h2>
-        </div>
         <main>
           {this.props.children}
         </main>
@@ -39,7 +36,6 @@ class MainLayout extends Component {
           </div>
         </footer>
     </div>
-
     );
   }
 }

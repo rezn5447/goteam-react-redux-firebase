@@ -22,16 +22,8 @@ function Greeting(props){
 class Header extends Component{
   render(){
     return(
-      // <nav>
-      // <ul>
-      //   <li><Link to="/">Home</Link></li>
-      //   <li><Link to="/profile">Profile</Link></li>
-      //   <li><Link to="/login">Login</Link></li>
-      //   <li><Link to="/register">Register</Link></li>
-      // </ul>
-      // </nav>
   <nav className="navbar navbar-light bg-faded">
-    <Link className="navbar-brand" to="/">Navbar</Link>
+    <Link className="navbar-brand" to="/">Navigation</Link>
     <ul className="nav navbar-nav">
       <li className="nav-item active">
         <Link className="nav-link" to="/">Home<span className="sr-only">(current)</span></Link>
