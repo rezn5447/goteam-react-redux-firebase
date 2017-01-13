@@ -1,21 +1,41 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
 import '../assets/stylesheets/header.scss';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo2.png';
+
+function UserActions(props){
+  if(props.user){
+    <div>
+      <Link to="/">'Go Home'</Link>
+      <Link to="/">'My Profile'</Link>
+      <Link to="/">'Play'</Link>
+      <Link to="/">'Logout'</Link>
+    </div>
+  }else {
+
+  }
+}
+
 class Header extends Component{
+  componentDidMount(){
+    this.setState(){
+      user: 
+    }
+  }
   render(){
     return(
-  <div>
-    <div className="header-left">
-      <Link to="/">{logo}</Link>
-    </div>
-    <div className="header-middle">
-      <Link to="/">'GO TEAM!'</Link>
-    </div>
-    <div className="header-right">
-      <Link to="/login" className="nav-link">Login</Link>
-    </div>
-  </div>
+      <header>
+        <div className="header-left">
+          <Link to="/"><img src={logo} alt="go-team-logo" />
+          </Link>
+        </div>
+        <div className="header-middle">
+          <Link to="/">'GO TEAM!'</Link>
+        </div>
+        <div className="header-right">
+          <UserActions user={this.state.user}/>
+        </div>
+      </header>
     );
   }
 }
