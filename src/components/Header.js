@@ -1,45 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
-
-
-function UserGreeting(props){
-  return <h1>Welcome Back {props.user}</h1>
-}
-
-function GuestGreeting(props){
-  return <h1>Please {props.msg}</h1>
-}
-
-function Greeting(props){
-  const isLoggedIn = props.isLoggedIn;
-  if(isLoggedIn){
-    return <UserGreeting user="Martin"/>
-  }else{
-    return <GuestGreeting msg="SIGN UP MF"/>
-  }
-}
-
+import '../assets/stylesheets/header.scss';
+import logo from '../assets/images/logo.png';
 class Header extends Component{
   render(){
     return(
-  <nav className="navbar navbar-light bg-faded">
-    <Link className="navbar-brand" to="/">Navigation</Link>
-    <ul className="nav navbar-nav">
-      <li className="nav-item active">
-        <Link className="nav-link" to="/">Home<span className="sr-only">(current)</span></Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/profile" className="nav-link">Profile</Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/login" className="nav-link">Login</Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/register" className="nav-link">Register</Link>
-      </li>
-    </ul>
-  </nav>
-
+  <div>
+    <div className="header-left">
+      <Link to="/">{logo}</Link>
+    </div>
+    <div className="header-middle">
+      <Link to="/">'GO TEAM!'</Link>
+    </div>
+    <div className="header-right">
+      <Link to="/login" className="nav-link">Login</Link>
+    </div>
+  </div>
     );
   }
 }

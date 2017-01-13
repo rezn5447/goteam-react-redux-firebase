@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import Header from '../components/Header';
 
 class Home extends Component {
 
 render(){
   return(
     <div className="container">
-      <p>Maybe this will work</p>
+    <Header />
       {this.props.children}
     </div>
     );
