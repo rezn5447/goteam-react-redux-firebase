@@ -17,8 +17,14 @@ export function login (email, pw) {
 export function saveUser (user) {
   return ref.child(`users/${user.uid}`)
     .set({
-      email: user.email,
-      uid: user.uid
+      uid:         user.uid,
+      first_name:  user.first_name,
+      last_name:   user.last_name,
+      street:      user.street,
+      city:        user.city,
+      state:       user.state,
+      zip:         user.zip,
+      email:       user.email
     })
     .then(() => user)
 }
