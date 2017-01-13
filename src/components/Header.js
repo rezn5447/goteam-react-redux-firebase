@@ -3,25 +3,30 @@ import { Link } from "react-router";
 import '../assets/stylesheets/header.scss';
 import logo from '../assets/images/logo2.png';
 
-function UserActions(props){
-  if(props.user){
-    <div>
-      <Link to="/">'Go Home'</Link>
-      <Link to="/">'My Profile'</Link>
-      <Link to="/">'Play'</Link>
-      <Link to="/">'Logout'</Link>
-    </div>
-  }else {
-
-  }
-}
+// function UserActions(props){
+//   if(props.user){
+//     <div>
+//       <Link to="/">'Go Home'</Link>
+//       <Link to="/">'My Profile'</Link>
+//       <Link to="/">'Play'</Link>
+//       <Link to="/">'Logout'</Link>
+//     </div>
+//   }else {
+//
+//   }
+// }
 
 class Header extends Component{
-  componentDidMount(){
-    this.setState(){
-      user: 
+  constructor(){
+    super();
+    this.state = {
+      user: {name: ''}
     }
   }
+  componentDidMount(){
+
+  }
+
   render(){
     return(
       <header>
@@ -33,7 +38,7 @@ class Header extends Component{
           <Link to="/">'GO TEAM!'</Link>
         </div>
         <div className="header-right">
-          <UserActions user={this.state.user}/>
+
         </div>
       </header>
     );

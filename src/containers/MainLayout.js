@@ -9,7 +9,6 @@ class MainLayout extends Component {
   constructor(){
     super();
     this.state = {
-      speed: 10,
       user: {}
     };
   }
