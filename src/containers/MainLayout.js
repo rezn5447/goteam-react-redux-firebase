@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import logo from '../assets/images/logo.svg';
+//import logo from '../assets/images/logo.png';
 import '../assets/stylesheets/main_layout.scss';
 import { ref } from '../helpers/database';
-import Header from '../components/Header';
+//import Header from '../components/Header';
 
 
 class MainLayout extends Component {
   constructor(){
     super();
     this.state = {
-      speed: 10,
       user: {}
     };
   }
@@ -25,17 +24,16 @@ class MainLayout extends Component {
 
   render() {
     return (
-    <div className="MainLayout">
-      <Header />
+      <div className="MainLayout">
         <main>
           {this.props.children}
         </main>
-        <footer className="footer">
-          <div className="container">
-            <p> You are going still going {this.state.speed} mph! </p>
-          </div>
-        </footer>
-    </div>
+          <footer className="footer">
+            <div className="container">
+              <p> You are going still going {this.state.speed} mph! </p>
+            </div>
+          </footer>
+      </div>
     );
   }
 }
