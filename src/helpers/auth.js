@@ -6,6 +6,11 @@ export function auth (email, pw) {
     .catch((error) => console.log('Oops', error))
 }
 
+export function register (user) {
+  return firebaseAuth().createUserWithEmailAndPassword(user.email, user.pw)
+    .then(saveUser)
+    .catch((error) => console.log('Oops', error))
+}
 export function logout () {
   return firebaseAuth().signOut()
 }
