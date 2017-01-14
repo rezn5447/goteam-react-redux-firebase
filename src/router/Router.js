@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import { Router, Route, browserHistory } from "react-router";
+import { Router, Route, browserHistory } from 'react-router';
 import Profile from '../components/Profile'
 import Home from '../components/Home'
 import Login from '../components/Login'
 import RegisterContainer from '../containers/RegisterContainer'
-import MainLayout from "../containers/MainLayout"
+import MainLayout from '../containers/MainLayout'
 
 class MyRouter extends Component {
   componentDidMount() {
