@@ -3,7 +3,7 @@ import { Router, Route, browserHistory } from "react-router";
 import Profile from '../components/Profile'
 import Home from '../components/Home'
 import Login from '../components/Login'
-import Register from '../components/Register'
+import RegisterContainer from '../containers/RegisterContainer'
 import MainLayout from "../containers/MainLayout"
 
 class MyRouter extends Component {
@@ -16,7 +16,7 @@ class MyRouter extends Component {
           <Route path={"/"} component={Home}>
             <Route path={"profile"} component={Profile}/>
             <Route path={"login"} component={Login}/>
-            <Route path={"register"} component={Register}/>
+            <Route path={"register"} component={RegisterContainer}/>
             </Route>
           </Route>
       </Router>
