@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { login } from '../helpers/auth';
 import LoginForm  from '../components/LoginForm';
 
-import '../assets/stylesheets/register.scss';
+import '../assets/stylesheets/home.scss';
 
 
 class LoginContainer extends Component {

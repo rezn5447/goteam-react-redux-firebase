@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-//import logo from '../assets/images/logo.png';
 import '../assets/stylesheets/main_layout.scss';
 import { ref } from '../helpers/database';
-//import Header from '../components/Header';
+import Header from '../components/Header';
 
 
 class MainLayout extends Component {
@@ -25,6 +24,7 @@ class MainLayout extends Component {
   render() {
     return (
       <div className="MainLayout">
+        <Header />
         <main>
           {this.props.children}
         </main>
