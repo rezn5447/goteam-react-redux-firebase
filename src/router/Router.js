@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Router, Route, browserHistory } from 'react-router';
-import Profile from '../components/Profile'
-import Home from '../components/Home'
-import Login from '../components/Login'
+import ProfileContainer from '../containers/ProfileContainer'
+import HomeContainer from '../containers/HomeContainer'
+import LoginContainer from '../containers/LoginContainer'
 import RegisterContainer from '../containers/RegisterContainer'
 import MainLayout from '../containers/MainLayout'
 
@@ -13,9 +13,9 @@ class MyRouter extends Component {
     return(
       <Router history={browserHistory}>
         <Route component={MainLayout}>
-          <Route path={"/"} component={Home}>
-            <Route path={"profile"} component={Profile}/>
-            <Route path={"login"} component={Login}/>
+          <Route path={"/"} component={HomeContainer}>
+            <Route path={"profile"} component={ProfileContainer}/>
+            <Route path={"login"} component={LoginContainer}/>
             <Route path={"register"} component={RegisterContainer}/>
             </Route>
           </Route>
