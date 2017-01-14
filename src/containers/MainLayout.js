@@ -30,7 +30,9 @@ class MainLayout extends Component {
         </main>
           <footer className="footer">
             <div className="container">
-              <p> You are going still going {this.state.speed} mph! </p>
+              <p> Converted to React from the original final project hosted on </p>
+              <a href="http://dbc-goteam.herokuapp.com/">
+              <p>http://dbc-goteam.herokuapp.com/</p></a>
             </div>
           </footer>
       </div>

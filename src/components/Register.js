@@ -10,7 +10,8 @@ class Register extends Component {
   render () {
     return (
       <div className="register-page-container">
-          <h1>Register</h1>
+        <div className="register-form">
+          <h1>Register as New User</h1>
           <form onSubmit={this.handleSubmit}>
             <div className="register-div">
               <input type="name" className="form-control"
@@ -29,9 +30,9 @@ class Register extends Component {
               <input type="password" className="form-control" placeholder="Password" ref={(pw) => this.pw = pw} />
               <input type="password" className="form-control" placeholder="Confirm Password" ref={(pw) => this.pw = pw} />
             </div>
-
             <button type="submit" className="btn btn-primary">Register</button>
           </form>
+        </div>
       </div>
     )
   }

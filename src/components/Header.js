@@ -35,10 +35,10 @@ class Header extends Component{
           </Link>
         </div>
         <div className="header-middle">
-          <Link to="/">'GO TEAM!'</Link>
+          <Link to="/">GO TEAM!</Link>
         </div>
         <div className="header-right">
-
+          <Link to="register">Register</Link>
         </div>
       </header>
     );
