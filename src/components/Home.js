@@ -1,15 +1,23 @@
 import React, {Component} from 'react';
-import Header from '../components/Header';
+import LoginContainer  from '../containers/LoginContainer';
+import MatchesMapContainer  from '../containers/MatchesMapContainer';
 import '../assets/stylesheets/home.scss';
 
+function HomeDisplay(props){
+  const current_user = props.current_user
+  if(current_user) {
+    return <MatchesMapContainer user={current_user} />
+  }else{
+    return <LoginContainer />
+  }
+}
 
 class Home extends Component {
 
 render(){
   return(
-    <div className="login-page-container">
-    <Header />
-      {this.props.children}
+    <div>
+      <HomeDisplay current_user=""/>
     </div>
     );
   }

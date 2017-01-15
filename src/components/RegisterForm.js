@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import '../assets/stylesheets/register.scss';
+
 
 const RegisterForm = (props) => {
   const { handleSubmit } = props;

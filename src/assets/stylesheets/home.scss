@@ -1,3 +1,6 @@
+@import './palette.scss';
+
+
 html {
   margin: 0;
   padding: 0;
@@ -10,26 +13,27 @@ body {
 
 .fa {
   margin-right: 2px;
-  color: #ff5714;
+  color: $color5;
 }
 
 .fa-envelope {
-  color: #0f4c5c;
+  color: $color4;
 }
 
 .fa-lock {
-  color: #0f4c5c;
+  color: $color4;
   padding: 2px;
 }
 
 .login-form {
+  font-size: 1.1em;
+  width: auto;
   border: 1px solid gray;
   border-radius: 8px;
   background-color: #fff;
   padding: 2em;
   padding-top: 1em;
-  opacity: 0.85;
-  font-size: 1.7em;
+  opacity: 0.95;
 }
 
 .login-page-container {
@@ -71,14 +75,14 @@ body {
 }
 
 .btn-default:hover {
-  background-color: #ff5714;
+  background-color: $color5;
   color: white;
 }
 
 .card {
-  background-color: #0f4c5c !important;
+  background-color: $color4 !important;
   border-radius: 15px !important;
-  border: 2px solid #ff5714 !important;
+  border: 2px solid $color5 !important;
   opacity: .85 !important;
   max-width: 350px !important;
 }
