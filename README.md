@@ -1,15 +1,18 @@
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
-
-I spent the first month after graduating from Dev bootcamp learning the skills to re-create our final project using Reactjs, redux for data flow, and firebase realtime database for OAuth, and realtime updates. Right now so far this is just the skeleton. Updates will be happening swiftly and shortly =)
-
 # README
 
-This application is a rails front end portion of the Go Team Final Project @ DBC
+This application is a conversion of front-end portion of the Go Team Final Project @ DBC
+Originally a decoupled Rails application, considering the needs of the project and its matchmaking properties, I decided to redo this project to learn more about React, redux, and Firebase as a backend data service.
+
+I spent the first month after graduating from Dev bootcamp learning the skills to re-create our final project using Reactjs, redux for data flow, and firebase realtime database for OAuth, and realtime updates. 
+
+This React project has :
+- React Router
+- Redux
+- Firebase Realtime database
+- Webpack
+- Babel
+- Scss
+
 
 # Concept & Introduction
 
@@ -22,14 +25,12 @@ This application is meant to provide matchmaking service and automation for casu
 
 
 ###Software Versions
--ruby 2.3.1p112
--rails 5
+- react 15.0
 
 ###Deployment
 -Deployed on dbc-goteam.herokuapp.com
 
 ###System Dependencies
--Depends on api-goteam.herokuapp.com
+- Firebase realtime database
 
-###Deployment Instructions:
--Regular Rails Application Deployment
+
