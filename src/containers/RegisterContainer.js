@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { register, login, saveUser } from '../helpers/auth';
+import { register,   saveUser } from '../helpers/auth';
 import RegisterForm  from '../components/RegisterForm';
 
 import '../assets/stylesheets/register.scss';

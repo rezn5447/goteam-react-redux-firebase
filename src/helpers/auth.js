@@ -8,7 +8,7 @@ export function auth (email, pw) {
 
 export function register (values) {
   return firebaseAuth().createUserWithEmailAndPassword(values.email, values.pw)
-    .then(login)
+    .then(console.log(values))
     .catch((error) => console.log('Oops', error))
 }
 export function logout () {
@@ -20,18 +20,13 @@ export function login (values) {
   .then(console.log(firebaseAuth().currentUser.uid))
 }
 
-export function saveUser (values) {
+export function saveUser (profile) {
   const userID = firebaseAuth().currentUser.uid
-  console.log(values)
-  return ref.child('users/' + userID)
-     .set({
-      // first_name:  values.first_name,
-      // last_name:   values.last_name,
-      // street:      values.street,
-      // city:        values.city,
-      // state:       values.state,
-      // zip:         values.zip,
-      // email:       values.email
+  const matches = {}
+  ref.child('users/' + userID)
+      .set({
+      profile,
+      matches
     })
-    .then(() => values)
+    .then(() => profile, matches)
 }
