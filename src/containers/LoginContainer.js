@@ -4,7 +4,7 @@ import LoginForm  from '../components/LoginForm';
 
 class LoginContainer extends Component {
   handleSubmit = (values) => {
-    console.log(values)
+    login(values)
   }
   render () {
     return (

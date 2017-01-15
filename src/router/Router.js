@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 import ProfileContainer from '../containers/ProfileContainer'
 import HomeContainer from '../containers/HomeContainer'
-import LoginContainer from '../containers/LoginContainer'
 import RegisterContainer from '../containers/RegisterContainer'
 import FindMatchesContainer from '../containers/FindMatchesContainer'
 import MainLayout from '../containers/MainLayout'

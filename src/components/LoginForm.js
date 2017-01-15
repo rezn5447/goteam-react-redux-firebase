@@ -9,8 +9,8 @@ const LoginForm = (props) => {
         <h1> Login </h1>
         <form onSubmit={handleSubmit}>
           <FontAwesome className="super-crazy-colors" name="rocket" />
-          <Field className="form-control" component="input" type="email" name="Email" placeholder="Email"/>
-          <FontAwesome className="fa fa-lock fa-lg" aria-hidden="true" />
+          <Field className="form-control" component="input" type="email" name="email" placeholder="Email"/>
+          <FontAwesome className="fa fa-lock fa-lg" name="rocket" aria-hidden="true" />
           <Field className="form-control" component="input" type="password" name="pw" placeholder="Password"/>
           <button type="submit" className="btn btn-primary">Login</button>
         </form>

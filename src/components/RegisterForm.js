@@ -9,15 +9,15 @@ const RegisterForm = (props) => {
         <h1>Register as New User</h1>
         <form onSubmit={handleSubmit}>
           <div className="register-div">
-            <Field className="form-control" component="input" type="name" name="First_Name" placeholder="First Name"/>
-            <Field className="form-control" component="input" type="name" name="Last_Name" placeholder="Last Name"/>
-            <Field className="form-control" component="input" type="email" name="Email" placeholder="Email"/>
+            <Field className="form-control" component="input" type="name" name="first_Name" placeholder="First Name"/>
+            <Field className="form-control" component="input" type="name" name="last_name" placeholder="Last Name"/>
+            <Field className="form-control" component="input" type="email" name="email" placeholder="Email"/>
           </div>
           <div className="register-div">
-            <Field className="form-control" component="input" type="address" name="Street" placeholder="Street"/>
-            <Field className="form-control" component="input" type="city" name="City" placeholder="City"/>
-            <Field className="form-control" component="input" type="state" name="State" placeholder="State"/>
-            <Field className="form-control" component="input" type="zip" name="Zip" placeholder="Zip"/>
+            <Field className="form-control" component="input" type="address" name="street" placeholder="Street"/>
+            <Field className="form-control" component="input" type="city" name="city" placeholder="City"/>
+            <Field className="form-control" component="input" type="state" name="state" placeholder="State"/>
+            <Field className="form-control" component="input" type="zip" name="zip" placeholder="Zip"/>
           </div>
           <div className="register-div">
             <Field className="form-control" component="input" type="password" name="pw" placeholder="Password"/>
