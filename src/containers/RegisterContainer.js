@@ -7,7 +7,7 @@ import '../assets/stylesheets/register.scss';
 
 class RegisterContainer extends Component {
   handleSubmit = (values) => {
-    console.log(values)
+    register(values)
   }
   render () {
     return (

@@ -4,6 +4,14 @@ import { ref } from '../helpers/database';
 
 
 class ProfileContainer extends Component {
+  componentDidMount(){
+    const userRef = ref.child("users/0");
+    userRef.on('value', snap =>{
+      this.setState({
+        user: snap.val()
+      })
+    });
+  }
   render () {
     return (
       <div className=" ">
