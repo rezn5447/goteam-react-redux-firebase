@@ -11,17 +11,13 @@ const RegisterForm = (props) => {
           <div className="register-div">
             <Field className="form-control" component="input" type="name" name="first_Name" placeholder="First Name"/>
             <Field className="form-control" component="input" type="name" name="last_name" placeholder="Last Name"/>
-            <Field className="form-control" component="input" type="email" name="email" placeholder="Email"/>
-          </div>
-          <div className="register-div">
+            <Field className="form-control" component="input" type="email" name="email" placeholder="Email"/><br/>
             <Field className="form-control" component="input" type="address" name="street" placeholder="Street"/>
             <Field className="form-control" component="input" type="city" name="city" placeholder="City"/>
             <Field className="form-control" component="input" type="state" name="state" placeholder="State"/>
-            <Field className="form-control" component="input" type="zip" name="zip" placeholder="Zip"/>
-          </div>
-          <div className="register-div">
+            <Field className="form-control" component="input" type="zip" name="zip" placeholder="Zip"/><br/>
             <Field className="form-control" component="input" type="password" name="pw" placeholder="Password"/>
-          </div>
+          </div><br/>
           <button type="submit" className="btn btn-primary">Register</button>
         </form>
       </div>
