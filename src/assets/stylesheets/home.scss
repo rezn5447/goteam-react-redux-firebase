@@ -1,6 +1,5 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";
+@import './palette.scss';
+
 
 html {
   margin: 0;
@@ -14,29 +13,30 @@ body {
 
 .fa {
   margin-right: 2px;
-  color: #ff5714;
+  color: $color5;
 }
 
 .fa-envelope {
-  color: #0f4c5c;
+  color: $color4;
 }
 
 .fa-lock {
-  color: #0f4c5c;
+  color: $color4;
   padding: 2px;
 }
 
-#login-form {
+.login-form {
+  font-size: 1.1em;
+  width: auto;
   border: 1px solid gray;
   border-radius: 8px;
   background-color: #fff;
   padding: 2em;
   padding-top: 1em;
-  opacity: 0.85;
-  font-size: 1.7em;
+  opacity: 0.95;
 }
 
-#login-page-container {
+.login-page-container {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
@@ -51,12 +51,12 @@ body {
   z-index: -1;
 }
 
-#login-register {
+.login-register {
   display: flex;
   align-items: baseline;
 }
 
-#login-register a {
+.login-register a {
   margin-left: 6px;
 }
 
@@ -75,14 +75,14 @@ body {
 }
 
 .btn-default:hover {
-  background-color: #ff5714;
+  background-color: $color5;
   color: white;
 }
 
 .card {
-  background-color: #0f4c5c !important;
+  background-color: $color4 !important;
   border-radius: 15px !important;
-  border: 2px solid #ff5714 !important;
+  border: 2px solid $color5 !important;
   opacity: .85 !important;
   max-width: 350px !important;
 }

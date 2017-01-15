@@ -1,10 +1,11 @@
 @import 'palette';
 // Color Palette
-// #ff5714;
-// #66c3ff;
-// #dce1e9;
-// #0f4c5c;
-// #2e7689;
+// $color1;
+// $color2;
+// $color3;
+// $color4;
+// $color5;
+
 
 header {
   width: 100%;
@@ -12,17 +13,17 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: .2em;
-  color: #ff5714;
+  color: $color5;
   background-color: $color4;
   border-bottom: 10px solid #ff5714;
 }
 
 header a, header a:visited{
-  color: #dce1e9;
+  color: $color3;
 }
 
 header a:hover {
-  color: #66c3ff;
+  color: $color2;
 }
 
 header img {
@@ -38,7 +39,7 @@ header img {
 
 .header-middle {
   font-size: 1.8em;
-  color: #dce1e9;
+  color: $color3;
   text-align: center;
   width: 32%;
 }
