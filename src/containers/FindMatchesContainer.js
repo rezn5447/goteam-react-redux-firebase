@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ref } from '../helpers/database';
 
-
 class FindMatchesContainer extends Component {
   componentDidMount(){
     const matchesRef = ref.child("matches");
@@ -15,7 +14,7 @@ class FindMatchesContainer extends Component {
   render () {
     return (
       <div className=" ">
-      
+
       </div>
     )
   }

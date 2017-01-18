@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Profile  from '../components/Profile';
 import { ref } from '../helpers/database';
+import '../assets/stylesheets/users.scss';
 
 
 class ProfileContainer extends Component {
@@ -18,12 +19,12 @@ class ProfileContainer extends Component {
         user: snap.val()
       })
     });
-  }
 
+  }
   render () {
     return (
-      <div className=" ">
-        <Profile user={this.state.user}/>
+      <div id="user-show-page-container">
+        <Profile first_name="Person" user={this.state.user}/>
       </div>
     )
   }
