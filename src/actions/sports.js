@@ -1,17 +1,14 @@
 import { ref } from '../helpers/database';
 import _ from 'lodash';
 import {
-  FETCH_USER,
-  UPDATE_USER,
-  DELETE_POST,
-  CREATE_USER
+  FETCH_SPORTS
 } from './types';
 
-const userRef = ref.child('users/0');
+const sportsRef = ref.child('sports');
 
-export function fetchUser(){
+export function fetchSports(){
   return dispatch => {
-    userRef.on('value', snapshot => {
+    sportsRef.on('childAdded', snapshot => {
       dispatch({
         type: FETCH_USER,
         payload: snapshot.val()

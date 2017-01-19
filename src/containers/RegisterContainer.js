@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { register,   saveUser } from '../helpers/auth';
-import RegisterForm  from '../components/RegisterForm';
+import RegisterForm  from '../forms/RegisterForm';
 
 import '../assets/stylesheets/register.scss';
 

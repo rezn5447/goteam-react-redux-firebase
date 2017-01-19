@@ -8,7 +8,7 @@ class HomeContainer extends Component {
   render(){
     return(
         <div>
-          <Home user={this.state.user} />
+          <Home />
         </div>
       );
     }

@@ -26,7 +26,6 @@ class Header extends Component{
   componentDidMount(){
 
   }
-
   render(){
     return(
       <header>

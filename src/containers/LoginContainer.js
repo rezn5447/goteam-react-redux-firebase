@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { login } from '../helpers/auth';
-import LoginForm  from '../components/LoginForm';
+import LoginForm  from '../forms/LoginForm';
 
 class LoginContainer extends Component {
   handleSubmit = (values) => {
