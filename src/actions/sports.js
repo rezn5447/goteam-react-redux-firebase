@@ -4,7 +4,7 @@ import {
   FETCH_SPORTS
 } from './types';
 
-const sportsRef = ref.child('sports/0');
+const sportsRef = ref.child('sports');
 
 export function fetchSports(){
   return dispatch => {
@@ -13,6 +13,8 @@ export function fetchSports(){
         type: FETCH_SPORTS,
         payload: snapshot.val()
       });
+      let whatever = snapshot.val()
+      whatever.forEach(value => console.log(value.id))
     });
   };
 }
