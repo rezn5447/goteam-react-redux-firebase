@@ -5,15 +5,13 @@ import _ from 'lodash';
 import * as actions from '../actions/sports';
 
 class SportsContainer extends Component {
-  state = { sports: '' };
-
   componentWillMount(){
     this.props.fetchSports();
   }
 //I'm having some trouble grabbing the values using rendersports...
   renderSports(){
-    return _.map(this.props.sports, (name,id,category,total_players) => {
-      return <SportItem id={id} name={name} category={category} total_players={total_players} />
+    return _.map(this.props.sports, (sport,key) => {
+      return <SportItem key={key} name={sport.name} category={sport.category} total_players={sport.total_players}  id={sport.id} />
     });
   }
 
@@ -30,7 +28,9 @@ class SportsContainer extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state)
   return { sports: state.sports };
+
 }
 
 export default connect(mapStateToProps, actions)(SportsContainer);

@@ -5,6 +5,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as reduxFormReducer } from 'redux-form';
 import reduxThunk from 'redux-thunk';
 import userReducer from './reducers/user_reducer';
+import sportReducer from './reducers/sport_reducer';
 import MyRouter from './router/Router';
 
 
@@ -15,7 +16,8 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 const reducers = combineReducers({
   form: reduxFormReducer, // mounted under "form"
-  user: userReducer
+  user: userReducer,
+  sports: sportReducer
 })
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
