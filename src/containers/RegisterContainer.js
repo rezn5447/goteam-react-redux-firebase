@@ -10,6 +10,7 @@ class RegisterContainer extends Component {
     register(values)
     saveUser(values)
   }
+  
   render () {
     return (
       <div className="register-page-container">
