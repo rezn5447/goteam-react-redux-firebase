@@ -4,13 +4,13 @@ import {
   FETCH_SPORTS
 } from './types';
 
-const sportsRef = ref.child('sports');
+const sportsRef = ref.child('sports/0');
 
 export function fetchSports(){
   return dispatch => {
-    sportsRef.on('childAdded', snapshot => {
+    sportsRef.on('value', snapshot => {
       dispatch({
-        type: FETCH_USER,
+        type: FETCH_SPORTS,
         payload: snapshot.val()
       });
     });

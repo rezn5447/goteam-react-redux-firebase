@@ -11,7 +11,7 @@ const LoginForm = (props) => {
           <FontAwesome className="super-crazy-colors" size="2x" name="rocket" />
           <Field className="form-control" component="input" type="email" name="email" placeholder="Email"/>
           <FontAwesome className="fa fa-lock fa-lg" name="rocket" aria-hidden="true" />
-          <Field className="form-control" component="input" type="password" name="pw" placeholder="Password"/>
+          <Field className="form-control" component="input" type="password" name="pw" placeholder="Password"/><br/>
           <button type="submit" className="btn btn-primary">Login</button>
         </form>
       </div>
