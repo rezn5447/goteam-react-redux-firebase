@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import Profile  from '../components/Profile';
 import { ref } from '../helpers/database';
 import '../assets/stylesheets/users.scss';
 
 
 class ProfileContainer extends Component {
-  constructor(){
-    super();
-    this.state = {
-      user: {}
-    }
-  }
 
-  componentDidMount(){
-    const userRef = ref.child("users/0");
-    userRef.on('value', snap =>{
-      this.setState({
-        user: snap.val()
-      })
-    });
-
+  renderProfile(){
+    return _.map( this.props.user, (key,user) => {
+      return <Profile first_name={user.first_name} last_name={user.last_name}
+      email={user.email} street={user.street} city={user.city} />
+    })
   }
   render () {
     return (
       <div id="user-show-page-container">
-        <Profile first_name="Person" user={this.state.user}/>
+        <Profile user={this.props.user} />
       </div>
     )
   }

@@ -8,7 +8,7 @@ class SportsContainer extends Component {
   componentWillMount(){
     this.props.fetchSports();
   }
-//I'm having some trouble grabbing the values using rendersports...
+
   renderSports(){
     return _.map(this.props.sports, (sport,key) => {
       return <SportItem key={key} name={sport.name} category={sport.category} total_players={sport.total_players}  id={sport.id} />
