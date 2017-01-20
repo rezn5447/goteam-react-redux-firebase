@@ -6,5 +6,5 @@ export default function(state = {}, action) {
     case FETCH_SPORTS:
       return action.payload;
   }
-  return state;
+    return state;
 };

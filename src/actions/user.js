@@ -16,6 +16,7 @@ export function fetchUser(){
         type: FETCH_USER,
         payload: snapshot.val()
       });
+      console.log(snapshot.val())
     });
   };
 }

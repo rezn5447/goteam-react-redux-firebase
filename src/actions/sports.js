@@ -13,8 +13,6 @@ export function fetchSports(){
         type: FETCH_SPORTS,
         payload: snapshot.val()
       });
-      let whatever = snapshot.val()
-      whatever.forEach(value => console.log(value.id))
     });
   };
 }
