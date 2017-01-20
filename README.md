@@ -30,7 +30,8 @@ This application is meant to provide matchmaking service and automation for casu
 - react 15.0
 
 ###Deployment
--Deployed on dbc-goteam.herokuapp.com
+Original -Deployed on dbc-goteam.herokuapp.com
+React Version - Not Deployed Yet
 
 ###System Dependencies
 - Firebase realtime database
