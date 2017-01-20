@@ -20,7 +20,6 @@ class SportsContainer extends Component {
       <div>
         <ul className="list-group">
           {this.renderSports()}
-          hello??
         </ul>
       </div>
     );
@@ -28,7 +27,6 @@ class SportsContainer extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state)
   return { sports: state.sports };
 
 }
