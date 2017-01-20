@@ -8,7 +8,7 @@ class SportsContainer extends Component {
   componentWillMount(){
     this.props.fetchSports();
   }
-//I'm having some trouble grabbing the values using rendersports...
+
   renderSports(){
     return _.map(this.props.sports, (sport,key) => {
       return <SportItem key={key} name={sport.name} category={sport.category} total_players={sport.total_players}  id={sport.id} />
@@ -20,7 +20,6 @@ class SportsContainer extends Component {
       <div>
         <ul className="list-group">
           {this.renderSports()}
-          hello??
         </ul>
       </div>
     );
@@ -28,7 +27,6 @@ class SportsContainer extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state)
   return { sports: state.sports };
 
 }
