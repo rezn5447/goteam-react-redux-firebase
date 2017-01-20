@@ -1,6 +1,6 @@
 # README
 
-This application is a conversion of front-end portion of the Go Team Final Project @ DBC
+This application is a rebuilding of the Go Team Final Project @ DBC
 Originally a decoupled Rails application, considering the needs of the project and its matchmaking properties, I decided to redo this project to learn more about React, Redux, and Firebase as a backend data service.
 
 I spent the first month after graduating from Dev bootcamp learning the skills to re-create our final project using Reactjs, redux for data flow, and firebase realtime database for OAuth, and realtime updates.
