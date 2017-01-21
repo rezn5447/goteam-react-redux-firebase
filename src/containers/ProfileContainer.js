@@ -15,17 +15,12 @@ class ProfileContainer extends Component {
     console.log(this.state)
   }
 
-  renderProfile(){
-    return _.map( this.props.user, (key,values) => {
-      return <Profile first_name={values.first_name} last_name={values.last_name}
-      email={values.email} street={values.street} city={values.city} />
-    })
-  }
   renderMatches(){
     return _.map( this.props.user.matches, (match,key) =>{
       return <MatchItem key={key} id={match.id} date={match.date} type={match.type} location={match.location} />
     });
   }
+  
   render () {
     return (
       <div id="user-show-page-container">

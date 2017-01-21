@@ -1,30 +1,28 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as firebase from 'firebase';
+import { currentUser,   userID } from '../helpers/auth';
 import { Link } from "react-router";
 import '../assets/stylesheets/header.scss';
 import logo from '../assets/images/logo2.png';
 
-// function UserActions(props){
-//   if(props.user){
-//     <div>
-//       <Link to="/">'Go Home'</Link>
-//       <Link to="/">'My Profile'</Link>
-//       <Link to="/">'Play'</Link>
-//       <Link to="/">'Logout'</Link>
-//     </div>
-//   }else {
-//
-//   }
-// }
-
 class Header extends Component{
-  constructor(){
-    super();
-    this.state = {
-      user: {name: ''}
-    }
-  }
   componentDidMount(){
 
+  }
+  userActions(){
+    if(currentUser){
+      return(
+        <ul>
+          <Link to="home">'Go Home'</Link>
+          <Link to="profile">'My Profile'</Link>
+          <Link to="play">'Play'</Link>
+          <Link to="logout">'Logout'</Link>
+        </ul>
+        )
+    } else {
+      return <Link to="register">Registeration</Link>
+    }
   }
   render(){
     return(
@@ -37,11 +35,11 @@ class Header extends Component{
           <Link to="/">GO TEAM!</Link>
         </div>
         <div className="header-right">
-          <Link to="register">Register</Link>
+          {this.userActions()}
         </div>
       </header>
     );
   }
 }
 
-export default Header;
+export default connect()(Header);
