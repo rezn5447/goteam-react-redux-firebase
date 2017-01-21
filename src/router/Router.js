@@ -8,6 +8,11 @@ import FindMatchesContainer from '../containers/FindMatchesContainer';
 import MainLayout from '../containers/MainLayout';
 
 class MyRouter extends Component {
+  function redirectToProfile(){
+    if(loggedIn){
+      replace("/profile")
+    }
+  }
   componentDidMount() {
   }
   render(){
@@ -15,7 +20,7 @@ class MyRouter extends Component {
       <Router history={browserHistory}>
         <Route component={MainLayout}>
           <Route path={"/"} component={HomeContainer} />
-          <Route path={"register"} component={RegisterContainer} />
+          <Route path={"register"} component={RegisterContainer} onEnter={redirectToProfile}/>
           <Route path={"sports"} component={SportsContainer} />
           <Route path={"profile"} component={ProfileContainer} >
             <Route path={"findmatches"} component={FindMatchesContainer}/>
