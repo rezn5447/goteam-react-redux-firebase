@@ -1,5 +1,7 @@
 import { ref, firebaseAuth } from './database'
-
+//const userID = firebaseAuth().currentUser.uid
+//const currentUser = firebaseAuth().currentUser
+// Alllll of these functions are going into an authentication reducer.
 export function auth (email, pw) {
   return firebaseAuth().createUserWithEmailAndPassword(email, pw)
     .then(saveUser)
@@ -22,11 +24,10 @@ export function login (values) {
 
 export function saveUser (profile) {
   const userID = firebaseAuth().currentUser.uid
-  const matches = {}
+
   ref.child('users/' + userID)
       .set({
-      profile,
-      matches
+      profile
     })
-    .then(() => profile, matches)
+    .then(() => profile)
 }

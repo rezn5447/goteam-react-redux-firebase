@@ -5,21 +5,6 @@ import Header from '../components/Header';
 
 
 class MainLayout extends Component {
-  constructor(){
-    super();
-    this.state = {
-      user: {}
-    };
-  }
-
-  componentDidMount() {
-    const speedRef = ref.child('speed');
-    speedRef.on('value', snap => {
-      this.setState({
-        speed: snap.val()
-      });
-    });
-  }
 
   render() {
     return (
