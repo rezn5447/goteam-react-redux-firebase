@@ -3,7 +3,6 @@ import _ from 'lodash';
 import {
   FETCH_USER,
   UPDATE_USER,
-  DELETE_POST,
   CREATE_USER
 } from './types';
 import {

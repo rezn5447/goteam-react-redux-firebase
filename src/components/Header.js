@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as firebase from 'firebase';
 import { currentUser,   userID } from '../helpers/auth';
 import { Link } from "react-router";
 import '../assets/stylesheets/header.scss';
@@ -19,7 +21,7 @@ class Header extends Component{
         </ul>
         )
     } else {
-      return <Link to="register">Register</Link>
+      return <Link to="register">Registeration</Link>
     }
   }
   render(){
@@ -40,4 +42,4 @@ class Header extends Component{
   }
 }
 
-export default Header;
+export default connect()(Header);
