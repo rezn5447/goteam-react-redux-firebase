@@ -22,18 +22,16 @@ export function createSession(values){
 export function signIn(values){
   return dispatch => {
     firebaseAuth.signInWithEmailAndPassword(values.email, values.pw)
-    .then(dispatch({
-      type: SIGN_IN,
-      payload: {authed : true}
-    }));
+
    }
 }
+
 export function signOut(){
   return dispatch => {
     firebaseAuth.signOut()
-    .then(dispatch({
-      type: SIGN_OUT,
-      payload: {authed : false}
-    }));
+    // .then(function dispatch({
+    //   type: SIGN_OUT,
+    //   payload: {authed : false}
+    // }));
    }
 }

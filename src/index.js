@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import reduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as reduxFormReducer } from 'redux-form';
-import reduxThunk from 'redux-thunk';
+
 import userReducer from './reducers/user_reducer';
 import sportReducer from './reducers/sport_reducer';
 import authReducer from './reducers/auth_reducer';
@@ -19,7 +20,7 @@ const reducers = combineReducers({
   form: reduxFormReducer, // mounted under "form"
   user: userReducer,
   sports: sportReducer,
-  auth: authReducer
+  authed: authReducer
 })
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
@@ -30,3 +31,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+// setup Firebase listeners

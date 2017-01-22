@@ -6,6 +6,7 @@ import LoginForm  from '../forms/LoginForm';
 class LoginContainer extends Component {
   handleSubmit = (values) => {
     this.props.signIn(values)
+    console.log(this.state.authed)
   }
   render () {
     return (
