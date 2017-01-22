@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { currentUser } from '../helpers/auth';
 import { Link } from "react-router";
 import '../assets/stylesheets/header.scss';
 import logo from '../assets/images/logo2.png';
@@ -10,7 +9,7 @@ class Header extends Component{
 
   }
   userActions(){
-    if(currentUser){
+    if(this.props.authed){
       return(
         <ul>
           <Link to="home">'Go Home'</Link>

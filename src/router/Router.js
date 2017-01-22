@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Router, Route, browserHistory } from 'react-router';
-import { currentUser } from '../helpers/auth';
 import ProfileContainer from '../containers/ProfileContainer';
 import HomeContainer from '../containers/HomeContainer';
 import RegisterContainer from '../containers/RegisterContainer';
@@ -10,7 +9,7 @@ import MainLayout from '../containers/MainLayout';
 
 class MyRouter extends Component {
   redirectToProfile(){
-    if(currentUser){
+    if(this.props.authed){
 
     }else{
 

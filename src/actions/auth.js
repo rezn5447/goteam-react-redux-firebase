@@ -24,7 +24,16 @@ export function signIn(values){
     firebaseAuth.signInWithEmailAndPassword(values.email, values.pw)
     .then(dispatch({
       type: SIGN_IN,
-      payload: true
+      payload: {authed : true}
+    }));
+   }
+}
+export function signOut(){
+  return dispatch => {
+    firebaseAuth.signOut()
+    .then(dispatch({
+      type: SIGN_OUT,
+      payload: {authed : false}
     }));
    }
 }

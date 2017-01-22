@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { register,   saveUser } from '../helpers/auth';
+import { connect } from 'react-redux';
+import * as actions from '../actions/user';
 import RegisterForm  from '../forms/RegisterForm';
 
 import '../assets/stylesheets/register.scss';
@@ -7,10 +8,9 @@ import '../assets/stylesheets/register.scss';
 
 class RegisterContainer extends Component {
   handleSubmit = (values) => {
-    register(values)
-    saveUser(values)
+    this.props.createUser(values)
   }
-  
+
   render () {
     return (
       <div className="register-page-container">
@@ -19,4 +19,10 @@ class RegisterContainer extends Component {
     )
   }
 }
-export default RegisterContainer;
+
+function mapStateToProps(state) {
+  return { sports: state.sports };
+
+}
+
+export default connect(mapStateToProps, actions)(RegisterContainer);
