@@ -22,6 +22,7 @@ export default function(state = {}, action) {
       return {...state, ...action.payload};
     case DELETE_USER:
       return _.omit(state, action.payload);
+
+      default:  return state;
   }
-  return state;
 }

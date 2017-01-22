@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { login } from '../helpers/auth';
+import { connect } from 'react-redux';
+import * as actions from '../actions/auth';
 import LoginForm  from '../forms/LoginForm';
 
 class LoginContainer extends Component {
   handleSubmit = (values) => {
-    login(values)
+    this.props.signIn(values)
   }
   render () {
     return (
@@ -14,4 +15,9 @@ class LoginContainer extends Component {
     )
   }
 }
-export default LoginContainer;
+
+function mapStateToProps(state) {
+  return { authed: state.authed };
+}
+
+export default connect(mapStateToProps, actions)(LoginContainer);

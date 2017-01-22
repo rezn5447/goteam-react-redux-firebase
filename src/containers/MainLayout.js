@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../assets/stylesheets/main_layout.scss';
-import { ref } from '../helpers/database';
 import Header from '../components/Header';
 
 

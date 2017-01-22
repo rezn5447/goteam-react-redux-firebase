@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Router, Route, browserHistory } from 'react-router';
-import { currentUser,   userID } from '../helpers/auth';
+import { currentUser } from '../helpers/auth';
 import ProfileContainer from '../containers/ProfileContainer';
 import HomeContainer from '../containers/HomeContainer';
 import RegisterContainer from '../containers/RegisterContainer';
@@ -13,7 +13,7 @@ class MyRouter extends Component {
     if(currentUser){
 
     }else{
-      
+
     }
   }
   componentDidMount() {

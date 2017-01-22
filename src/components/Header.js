@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as firebase from 'firebase';
-import { currentUser,   userID } from '../helpers/auth';
+import { currentUser } from '../helpers/auth';
 import { Link } from "react-router";
 import '../assets/stylesheets/header.scss';
 import logo from '../assets/images/logo2.png';
