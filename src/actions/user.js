@@ -1,15 +1,14 @@
 import { ref } from '../helpers/database';
 import _ from 'lodash';
+// import {
+//   FETCH_USER,
+//   UPDATE_USER,
+//   CREATE_USER
+// } from './types';
 import {
   FETCH_USER,
-  UPDATE_USER,
-  CREATE_USER
-} from './types';
-import {
   FETCH_USER_MATCHES,
-  UPDATE_USER_MATCHES,
   FETCH_USER_STATS,
-  UPDATE_USER_STATS
 } from './types';
 
 const userRef = ref.child('users/0');
@@ -33,7 +32,6 @@ export function fetchUserMatches(){
         type: FETCH_USER_MATCHES,
         payload: snapshot.val()
       });
-      console.log(snapshot.val())
     });
   };
 }

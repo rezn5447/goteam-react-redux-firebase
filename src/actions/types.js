@@ -3,6 +3,8 @@ export const UPDATE_USER = 'UPDATE_USER';
 export const DELETE_USER = 'DELETE_USER';
 export const CREATE_USER = 'CREATE_USER';
 
+export const SIGN_IN = 'SIGN_IN';
+export const SIGN_OUT = 'SIGN_OUT';
 
 export const FETCH_SPORTS = 'FETCH_SPORTS';
 export const UPDATE_SPORT = 'UPDATE_SPORT';
