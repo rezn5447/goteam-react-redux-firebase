@@ -26,7 +26,7 @@ export function registerUser(values){
     firebaseAuth.createUserWithEmailAndPassword(values.email, values.pw)
     .then(response => {
       dispatch(authUser());
-      browserHistory.push('/profile');
+      browserHistory.push('users');
     })
     .catch(error => {
       console.log(error);
@@ -36,13 +36,25 @@ export function registerUser(values){
 }
 
 export function signOut() {
-  browserHistory.push('/');
+  browserHistory.push('home');
 
   return {
-    type: SIGN_OUT_USER
+    type: SIGN_OUT_USER,
+    payload: { authenticated: false }
   }
 }
 
+export function verifyAuth(){
+  return dispatch => {
+    firebaseAuth.onAuthStateChanged( user =>{
+      if(user){
+        dispatch(authUser())
+      } else {
+        dispatch(signOut())
+      }
+    })
+  }
+}
 export function authUser() {
   return {
     type: AUTH_USER,

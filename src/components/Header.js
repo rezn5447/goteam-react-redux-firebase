@@ -6,12 +6,11 @@ import logo from '../assets/images/logo2.png';
 import '../assets/stylesheets/header.scss';
 
 class Header extends Component{
-  handleSubmit(){
+
+  handleSubmit = () => {
     this.props.signOut()
   }
-  componentDidMount(){
 
-  }
   userActions(){
     if(this.props.authenticated){
       return(
@@ -19,22 +18,22 @@ class Header extends Component{
           <Link to="home">Go Home</Link>
           <Link to="profile">My Profile</Link>
           <Link to="play">Play</Link>
-          <button type="submit" className="btn btn-primary" onClick={this.props.handleSubmit}>Logout</button>
+          <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Logout</button>
         </ul>
         )
     } else {
-      return <Link to="register">Registation</Link>
+      return <Link to="register">Register</Link>
     }
   }
   render(){
     return(
       <header>
         <div className="header-left">
-          <Link to="/"><img src={logo} alt="go-team-logo" />
+          <Link to="home"><img src={logo} alt="go-team-logo" />
           </Link>
         </div>
         <div className="header-middle">
-          <Link to="/">GO TEAM!</Link>
+          <Link to="home">GO TEAM!</Link>
         </div>
         <div className="header-right">
           {this.userActions()}

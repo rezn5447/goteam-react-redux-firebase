@@ -7,6 +7,12 @@ class LoginContainer extends Component {
   handleSubmit = (values) => {
     this.props.signIn(values)
   }
+  renderAuthenticationError() {
+  if (this.props.authenticationError) {
+    return <div className="alert alert-danger">{ this.props.authenticationError }</div>;
+  }
+  return <div></div>;
+}
   render () {
     return (
       <div className="login-page-container">
