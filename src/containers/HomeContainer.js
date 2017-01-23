@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import LoginContainer  from '../containers/LoginContainer';
 import MatchesMapContainer  from '../containers/MatchesMapContainer';
 import '../assets/stylesheets/home.scss';
@@ -6,8 +7,8 @@ import '../assets/stylesheets/home.scss';
 
 class HomeContainer extends Component {
   HomeDisplay(){
-    if(this.props.authed) {
-      return <MatchesMapContainer />
+    if(this.props.authenticated) {
+      return <MatchesMap />
     }else{
       return <LoginContainer />
     }
@@ -21,5 +22,9 @@ class HomeContainer extends Component {
       );
     }
   }
+function mapStateToProps(state){
+  console.log(state)
+  return { authenticated: state.authenticated }
 
-export default HomeContainer;
+}
+export default connect(mapStateToProps)(HomeContainer);

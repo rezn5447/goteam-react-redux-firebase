@@ -8,13 +8,6 @@ import FindMatchesContainer from '../containers/FindMatchesContainer';
 import MainLayout from '../containers/MainLayout';
 
 class MyRouter extends Component {
-  redirectToProfile(){
-    if(this.props.authed){
-
-    }else{
-
-    }
-  }
   componentDidMount() {
   }
   render(){

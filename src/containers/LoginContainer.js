@@ -6,7 +6,6 @@ import LoginForm  from '../forms/LoginForm';
 class LoginContainer extends Component {
   handleSubmit = (values) => {
     this.props.signIn(values)
-    console.log(this.state.authed)
   }
   render () {
     return (
@@ -17,8 +16,4 @@ class LoginContainer extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { authed: state.authed };
-}
-
-export default connect(mapStateToProps, actions)(LoginContainer);
+export default connect(null, actions)(LoginContainer);

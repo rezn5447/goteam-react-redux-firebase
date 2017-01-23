@@ -9,7 +9,6 @@ import {
   FETCH_USER,
   FETCH_USER_MATCHES,
   FETCH_USER_STATS,
-  CREATE_USER,
 } from './types';
 
 const userRef = ref.child('users/0');
@@ -26,16 +25,6 @@ export function fetchUser(){
   };
 }
 
-export function createUser(){
-  return dispatch => {
-    userRef.on('value', snapshot => {
-      dispatch({
-        type: CREATE_USER,
-        payload: snapshot.val()
-      });
-    });
-  };
-}
 export function fetchUserMatches(){
   return dispatch => {
     userMatchesRef.on('value', snapshot => {
