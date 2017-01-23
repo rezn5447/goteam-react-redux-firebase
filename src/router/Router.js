@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import RequireAuth from '../containers/RequireAuth'
 import ProfileContainer from '../containers/ProfileContainer';
 import HomeContainer from '../containers/HomeContainer';
 import LoginContainer from '../containers/LoginContainer';
@@ -14,15 +15,14 @@ class MyRouter extends Component {
       <Router history={browserHistory}>
         <Route path={"/"} component={MainLayout}>
           <IndexRoute component={HomeContainer} />
-          <Route path={"home"} component={HomeContainer} />
           <Route path={"login"} component={LoginContainer} />
           <Route path={"register"} component={RegisterContainer} onEnter={this.redirectToProfile}/>
 
 // Need to separate this area with authentication verification properly //
-          <Route path={"users/:user_ID"} component={ProfileContainer} >
-            <Route path={"home"} component={HomeContainer} />
-            <Route path={"sports"} component={SportsContainer} />
-            <Route path={"play"} component={FindMatchesContainer}/>
+          <Route path={"users/:user_ID"} component={RequireAuth(ProfileContainer)} >
+            <Route path={"home"} component={RequireAuth(HomeContainer)} />
+            <Route path={"sports"} component={RequireAuth(SportsContainer)} />
+            <Route path={"play"} component={RequireAuth(FindMatchesContainer)}/>
           </Route>
         </Route>
       </Router>

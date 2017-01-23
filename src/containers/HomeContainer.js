@@ -6,18 +6,10 @@ import '../assets/stylesheets/home.scss';
 
 
 class HomeContainer extends Component {
-  HomeDisplay(){
-    if(this.props.authenticated) {
-      return <MatchesMap />
-    }else{
-      return <LoginContainer />
-    }
-  }
-
   render(){
     return(
       <div id="1-reg">
-        {this.HomeDisplay()}
+        <MatchesMap />
       </div>
       );
     }

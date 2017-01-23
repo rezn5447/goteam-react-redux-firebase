@@ -4,6 +4,22 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/auth';
 import FontAwesome from 'react-fontawesome';
 
+const validate = values => {
+  const errors = {};
+
+  if(!values.email) {
+    errors.email = "Please enter an email.";
+  }else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = "Invalid email address.";
+  }
+
+  if(!values.password){
+    errors.password = "Please enter a password";
+  }
+
+  return errors;
+}
+
 class LoginContainer extends Component {
   handleSubmit = (values) => {
     console.log(values)
@@ -35,5 +51,6 @@ class LoginContainer extends Component {
   }
 }
 export default connect(null, actions)(reduxForm({
-  form: 'login'
+  form: 'login',
+  validate
 })(LoginContainer));
