@@ -11,8 +11,6 @@ class ProfileContainer extends Component {
 
   componentWillMount(){
     this.props.fetchUser();
-    this.props.fetchUserMatches();
-    console.log(this.state)
   }
 
   renderMatches(){
@@ -20,7 +18,7 @@ class ProfileContainer extends Component {
       return <MatchItem key={key} id={match.id} date={match.date} type={match.type} location={match.location} />
     });
   }
-  
+
   render () {
     return (
       <div id="user-show-page-container">
@@ -32,9 +30,11 @@ class ProfileContainer extends Component {
     )
   }
 }
-  function mapStateToProps(state){
-    console.log(state)
-    return { user: state.user,
-             matches: state.user.matches}
-  }
+
+function mapStateToProps(state){
+console.log(state)
+return { user: state.user,
+         matches: state.user.matches }
+
+}
 export default connect(mapStateToProps, actions)(ProfileContainer);

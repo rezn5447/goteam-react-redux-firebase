@@ -1,37 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { currentUser } from '../helpers/auth';
 import { Link } from "react-router";
-import '../assets/stylesheets/header.scss';
+import * as actions from '../actions/auth';
 import logo from '../assets/images/logo2.png';
+import '../assets/stylesheets/header.scss';
 
 class Header extends Component{
-  componentDidMount(){
 
+  handleSubmit = () => {
+    this.props.signOut()
   }
+
   userActions(){
-    if(currentUser){
+    if(this.props.authenticated){
       return(
         <ul>
-          <Link to="home">'Go Home'</Link>
-          <Link to="profile">'My Profile'</Link>
-          <Link to="play">'Play'</Link>
-          <Link to="logout">'Logout'</Link>
+          <Link to="home">Go Home</Link>
+          <Link to="profile">My Profile</Link>
+          <Link to="play">Play</Link>
+          <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Logout</button>
         </ul>
         )
     } else {
-      return <Link to="register">Registeration</Link>
+      return <Link to="register">Register</Link>
     }
   }
   render(){
     return(
       <header>
         <div className="header-left">
-          <Link to="/"><img src={logo} alt="go-team-logo" />
+          <Link to="home"><img src={logo} alt="go-team-logo" />
           </Link>
         </div>
         <div className="header-middle">
-          <Link to="/">GO TEAM!</Link>
+          <Link to="home">GO TEAM!</Link>
         </div>
         <div className="header-right">
           {this.userActions()}
@@ -40,5 +42,9 @@ class Header extends Component{
     );
   }
 }
+function mapStateToProps(state){
+  console.log(state)
+  return { authenticated: state.authenticated }
+}
 
-export default connect()(Header);
+export default connect(mapStateToProps, actions)(Header);

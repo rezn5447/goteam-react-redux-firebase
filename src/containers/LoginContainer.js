@@ -7,6 +7,12 @@ class LoginContainer extends Component {
   handleSubmit = (values) => {
     this.props.signIn(values)
   }
+  renderAuthenticationError() {
+  if (this.props.authenticationError) {
+    return <div className="alert alert-danger">{ this.props.authenticationError }</div>;
+  }
+  return <div></div>;
+}
   render () {
     return (
       <div className="login-page-container">
@@ -16,8 +22,4 @@ class LoginContainer extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { authed: state.authed };
-}
-
-export default connect(mapStateToProps, actions)(LoginContainer);
+export default connect(null, actions)(LoginContainer);

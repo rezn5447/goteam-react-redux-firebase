@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Router, Route, browserHistory } from 'react-router';
-import { currentUser } from '../helpers/auth';
 import ProfileContainer from '../containers/ProfileContainer';
 import HomeContainer from '../containers/HomeContainer';
 import RegisterContainer from '../containers/RegisterContainer';
@@ -9,24 +8,18 @@ import FindMatchesContainer from '../containers/FindMatchesContainer';
 import MainLayout from '../containers/MainLayout';
 
 class MyRouter extends Component {
-  redirectToProfile(){
-    if(currentUser){
-
-    }else{
-
-    }
-  }
-  componentDidMount() {
-  }
   render(){
     return(
       <Router history={browserHistory}>
-        <Route component={MainLayout}>
-          <Route path={"/"} component={HomeContainer} />
+        <Route path={"/"} component={MainLayout}>
+          <Route path={"login"} component={HomeContainer} />
           <Route path={"register"} component={RegisterContainer} onEnter={this.redirectToProfile}/>
-          <Route path={"sports"} component={SportsContainer} />
-          <Route path={"profile"} component={ProfileContainer} >
-            <Route path={"findmatches"} component={FindMatchesContainer}/>
+
+// Need to separate this area with authentication verification properly // 
+          <Route path={"users/:user_ID"} component={ProfileContainer} >
+            <Route path={"home"} component={HomeContainer} />
+            <Route path={"sports"} component={SportsContainer} />
+            <Route path={"play"} component={FindMatchesContainer}/>
           </Route>
         </Route>
       </Router>

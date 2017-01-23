@@ -1,30 +1,70 @@
-import { ref, firebaseAuth } from '../helpers/database';
+import { firebaseAuth } from '../helpers/database';
+import { browserHistory } from 'react-router';
 import _ from 'lodash';
 import {
-  FETCH_CURRENT_USER,
-  SIGN_OUT,
-  SIGN_IN
+  AUTH_USER,
+  SIGN_OUT_USER,
+  AUTH_ERROR
 } from './types';
-
-const userRef = ref.child('users/0');
-
-export function createSession(values){
-  return dispatch => {
-    userRef.on('value', snapshot => {
-      dispatch({
-        type: FETCH_CURRENT_USER,
-        payload: snapshot.val()
-      });
-    });
-  };
-}
 
 export function signIn(values){
   return dispatch => {
     firebaseAuth.signInWithEmailAndPassword(values.email, values.pw)
-    .then(dispatch({
-      type: SIGN_IN,
-      payload: true
-    }));
+    .then(response => {
+      dispatch(authUser());
+      browserHistory.push('/profile');
+    })
+    .catch(error => {
+      console.log(error);
+      dispatch(authError(error));
+    });
    }
+}
+
+export function registerUser(values){
+  return dispatch => {
+    firebaseAuth.createUserWithEmailAndPassword(values.email, values.pw)
+    .then(response => {
+      dispatch(authUser());
+      browserHistory.push('users');
+    })
+    .catch(error => {
+      console.log(error);
+      dispatch(authError(error));
+    });
+   }
+}
+
+export function signOut() {
+  browserHistory.push('home');
+
+  return {
+    type: SIGN_OUT_USER,
+    payload: { authenticated: false }
+  }
+}
+
+export function verifyAuth(){
+  return dispatch => {
+    firebaseAuth.onAuthStateChanged( user =>{
+      if(user){
+        dispatch(authUser())
+      } else {
+        dispatch(signOut())
+      }
+    })
+  }
+}
+export function authUser() {
+  return {
+    type: AUTH_USER,
+    payload: { authenticated: true }
+  }
+}
+
+export function authError(error) {
+  return {
+    type: AUTH_ERROR,
+    payload: error
+  }
 }
