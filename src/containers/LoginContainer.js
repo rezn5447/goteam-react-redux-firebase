@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import * as actions from '../actions/auth';
 import FontAwesome from 'react-fontawesome';
 
 class LoginContainer extends Component {
   handleSubmit = (values) => {
-    this.props.signIn(values)
+    console.log(values)
+  //  this.props.signIn(values)
   }
 
   renderAuthenticationError() {
@@ -13,7 +16,7 @@ class LoginContainer extends Component {
     }
       return <div></div>;
   }
-  
+
   render () {
     return (
       <div className="login-page-container">
@@ -31,6 +34,6 @@ class LoginContainer extends Component {
     );
   }
 }
-export default reduxForm({
-    form: 'login'
-})(LoginContainer)
+export default connect(null, actions)(reduxForm({
+  form: 'login'
+})(LoginContainer));

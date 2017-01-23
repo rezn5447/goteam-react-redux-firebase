@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import '../assets/stylesheets/register.scss';
+import { connect } from 'react-redux';
+import * as actions from '../actions/auth';
+
 
 
 class RegisterContainer extends Component {
   handleSubmit = (values) => {
-    this.props.createUser(values)
+    console.log(values)
+    //  this.props.createUser(values)
   }
 
   render () {
@@ -32,7 +35,6 @@ class RegisterContainer extends Component {
   }
 }
 
-
-export default reduxForm({
+export default connect(null, actions)(reduxForm({
   form: 'register'
-})(RegisterContainer)
+})(RegisterContainer));

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from "react-router";
 import * as actions from '../actions/auth';
 import logo from '../assets/images/logo2.png';
-import '../assets/stylesheets/header.scss';
+
 
 class Header extends Component{
 
@@ -14,16 +14,17 @@ class Header extends Component{
   userActions(){
     if(this.props.authenticated){
       return(
-        <ul>
-          <Link to="users/:user_ID">My Profile | </Link>
-          <Link to="users/:user_ID/sports">Play |</Link>
-          <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Logout</button>
-        </ul>
+        <div className="login-header">
+          <Link to="users/:user_ID">My Profile</Link> |
+          <Link to="users/:user_ID/sports"> Play!</Link> |
+          <a onClick={this.handleSubmit}> Logout</a>
+        </div>
         )
     } else {
       return <Link to="register">Register</Link>
     }
   }
+
   render(){
     return(
       <header>
