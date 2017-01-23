@@ -22,9 +22,9 @@ class HomeContainer extends Component {
       );
     }
   }
-function mapStateToProps(state){
-  console.log(state)
-  return { authenticated: state.authenticated }
 
+function mapStateToProps(state){
+  return { authenticated: state.authenticated }
 }
+
 export default connect(mapStateToProps)(HomeContainer);

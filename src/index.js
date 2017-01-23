@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import * as Actions from '../actions';
+import * as actions from './actions/auth';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as reduxFormReducer } from 'redux-form';
 
@@ -37,4 +37,4 @@ ReactDOM.render(
 
 // setup Firebase listeners
 
- store.dispatch(Actions.verifyAuth())
+ store.dispatch(actions.verifyAuth())
