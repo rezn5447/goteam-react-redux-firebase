@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import ProfileContainer from '../containers/ProfileContainer';
 import HomeContainer from '../containers/HomeContainer';
 import LoginContainer from '../containers/LoginContainer';
@@ -13,8 +13,9 @@ class MyRouter extends Component {
     return(
       <Router history={browserHistory}>
         <Route path={"/"} component={MainLayout}>
-          <Route path={"login"} component={LoginContainer} />
+          <IndexRoute component={HomeContainer} />
           <Route path={"home"} component={HomeContainer} />
+          <Route path={"login"} component={LoginContainer} />
           <Route path={"register"} component={RegisterContainer} onEnter={this.redirectToProfile}/>
 
 // Need to separate this area with authentication verification properly //
