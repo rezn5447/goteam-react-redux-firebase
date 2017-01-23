@@ -11,8 +11,9 @@ export function signIn(values){
   return dispatch => {
     firebaseAuth.signInWithEmailAndPassword(values.email, values.pw)
     .then(response => {
+      console.log(response)
       dispatch(authUser());
-      browserHistory.push('/profile');
+      browserHistory.push('users/:user_ID');
     })
     .catch(error => {
       console.log(error);
@@ -26,7 +27,7 @@ export function registerUser(values){
     firebaseAuth.createUserWithEmailAndPassword(values.email, values.pw)
     .then(response => {
       dispatch(authUser());
-      browserHistory.push('users');
+      browserHistory.push('users/:user_ID');
     })
     .catch(error => {
       console.log(error);
@@ -36,7 +37,7 @@ export function registerUser(values){
 }
 
 export function signOut() {
-  browserHistory.push('home');
+  browserHistory.push('login');
 
   return {
     type: SIGN_OUT_USER,
@@ -50,11 +51,13 @@ export function verifyAuth(){
       if(user){
         dispatch(authUser())
       } else {
+        console.log("No user")
         dispatch(signOut())
       }
     })
   }
 }
+
 export function authUser() {
   return {
     type: AUTH_USER,

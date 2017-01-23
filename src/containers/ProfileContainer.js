@@ -35,6 +35,6 @@ function mapStateToProps(state){
 console.log(state)
 return { user: state.user,
          matches: state.user.matches }
-
 }
+
 export default connect(mapStateToProps, actions)(ProfileContainer);

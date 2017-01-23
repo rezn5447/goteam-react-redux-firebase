@@ -15,9 +15,8 @@ class Header extends Component{
     if(this.props.authenticated){
       return(
         <ul>
-          <Link to="home">Go Home</Link>
-          <Link to="profile">My Profile</Link>
-          <Link to="play">Play</Link>
+          <Link to="users/:user_ID">My Profile | </Link>
+          <Link to="users/:user_ID/sports">Play |</Link>
           <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Logout</button>
         </ul>
         )
@@ -42,9 +41,11 @@ class Header extends Component{
     );
   }
 }
+
 function mapStateToProps(state){
-  console.log(state)
-  return { authenticated: state.authenticated }
+console.log(state)
+return { authenticated: state.authenticated,
+         user: state.user }
 }
 
 export default connect(mapStateToProps, actions)(Header);
