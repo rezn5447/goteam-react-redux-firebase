@@ -1,19 +1,56 @@
 import reduxThunk from 'redux-thunk';
-import { Provider } from 'react-redux';
-import * as Actions from '../actions';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as reduxFormReducer } from 'redux-form';
+import * as actions from '../actions/auth';
+import userReducer from '../reducers/user_reducer';
+import sportReducer from '../reducers/sport_reducer';
+import authReducer from '../reducers/auth_reducer';
 
-import userReducer from './reducers/user_reducer';
-import sportReducer from './reducers/sport_reducer';
-import authReducer from './reducers/auth_reducer';
-import MyRouter from './router/Router';
 
-
-export const store = createStore(
-  combineReducers({
+export default function configureStore(initialState){
+  const reducers = combineReducers({
     form: reduxFormReducer, // mounted under "form"
     user: userReducer,
     sports: sportReducer,
-    authenticated: authReducer })
-);
+    auth: authReducer
+  })
+    const store = createStore(
+      reducers,
+      initialState,
+      compose(
+        applyMiddleware(reduxThunk),
+        window.devToolsExtension ? window.devToolsExtension() : f => f
+
+      )
+    );
+
+  const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
+
+  const store = createStoreWithMiddleware(reducers);
+  store.dispatch(actions.verifyAuth());
+  return store
+}
+
+
+export default function configureStore(initialState) {
+  const store = createStore(
+    rootReducer,
+    initialState,
+    compose (
+      applyMiddleware(reduxThunk),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
+  );
+
+  if (module.hot) {
+    // Enable Webpack hot module replacement for reducers
+    module.hot.accept('../reducers', () => {
+      const nextRootReducer = require('../reducers').default;
+      store.replaceReducer(nextRootReducer);
+    });
+  }
+
+  store.dispatch(Actions.verifyAuth());
+
+  return store;
+}

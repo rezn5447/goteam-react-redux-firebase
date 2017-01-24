@@ -38,6 +38,7 @@ class LoginContainer extends Component {
       <div className="login-page-container">
         <div className="login-form">
           <h1> Login </h1>
+            { this.renderAuthenticationError() }
           <form onSubmit={this.handleSubmit}>
             <FontAwesome className="super-crazy-colors" size="2x" name="user" />
             <Field className="form-control" component="input" type="email" name="email" placeholder="Email"/><br/>
@@ -50,7 +51,12 @@ class LoginContainer extends Component {
     );
   }
 }
-export default connect(null, actions)(reduxForm({
+
+function mapStateToProps(state){
+  return { authenticationError: state.auth.error}
+}
+
+export default connect(mapStateToProps, actions)(reduxForm({
   form: 'login',
   validate
 })(LoginContainer));

@@ -14,13 +14,12 @@ class MyRouter extends Component {
     return(
       <Router history={browserHistory}>
         <Route path={"/"} component={MainLayout}>
-          <IndexRoute component={HomeContainer} />
           <Route path={"login"} component={LoginContainer} />
           <Route path={"register"} component={RegisterContainer} onEnter={this.redirectToProfile}/>
 
 // Need to separate this area with authentication verification properly //
+          <Route path={"home"} component={RequireAuth(HomeContainer)} />
           <Route path={"users/:user_ID"} component={RequireAuth(ProfileContainer)} >
-            <Route path={"home"} component={RequireAuth(HomeContainer)} />
             <Route path={"sports"} component={RequireAuth(SportsContainer)} />
             <Route path={"play"} component={RequireAuth(FindMatchesContainer)}/>
           </Route>

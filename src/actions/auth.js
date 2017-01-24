@@ -37,7 +37,7 @@ export function registerUser(values){
 }
 
 export function signOut() {
-  browserHistory.push('login');
+  browserHistory.push('/');
 
   return {
     type: SIGN_OUT_USER,
@@ -49,6 +49,7 @@ export function verifyAuth(){
   return dispatch => {
     firebaseAuth.onAuthStateChanged( user =>{
       if(user){
+        console.log(user)
         dispatch(authUser())
       } else {
         console.log("No user")

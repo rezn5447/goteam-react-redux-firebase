@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import LoginContainer  from '../containers/LoginContainer';
 import MatchesMap  from '../components/MatchesMap';
 import '../assets/stylesheets/home.scss';
-
+import '../assets/stylesheets/home.scss';
 
 class HomeContainer extends Component {
+
+
   render(){
     return(
-      <div id="1-reg">
-        <MatchesMap />
+      <div id="matches-in-area-container">
+
       </div>
       );
     }
