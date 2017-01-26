@@ -1,4 +1,4 @@
-import { firebaseAuth } from '../helpers/database';
+import { firebaseAuth, currentUser } from '../helpers/database';
 import { browserHistory } from 'react-router';
 import _ from 'lodash';
 import {
@@ -11,9 +11,9 @@ export function signIn(values){
   return dispatch => {
     firebaseAuth.signInWithEmailAndPassword(values.email, values.pw)
     .then(response => {
-      console.log(response)
+      console.log(currentUser.uid)
       dispatch(authUser());
-      browserHistory.push('users/:user_ID');
+      browserHistory.push(`users/${currentUser}`);
     })
     .catch(error => {
       console.log(error);
@@ -37,7 +37,7 @@ export function registerUser(values){
 }
 
 export function signOut() {
-  browserHistory.push('/');
+  browserHistory.push('login');
 
   return {
     type: SIGN_OUT_USER,

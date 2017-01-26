@@ -21,7 +21,12 @@ class Header extends Component{
         </div>
         )
     } else {
-      return <Link to="register">Register</Link>
+      return (
+        <div className="login-header">
+          <Link to="login">Login</Link> |
+          <Link to="register"> Register</Link>
+        </div>
+      )
     }
   }
 
@@ -45,7 +50,7 @@ class Header extends Component{
 
 function mapStateToProps(state){
 console.log(state)
-return { authenticated: state.authenticated,
+return { authenticated: state.auth.authenticated,
          user: state.user }
 }
 

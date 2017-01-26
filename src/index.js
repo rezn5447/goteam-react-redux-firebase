@@ -28,7 +28,7 @@ const reducers = combineReducers({
   form: reduxFormReducer, // mounted under "form"
   user: userReducer,
   sports: sportReducer,
-  authenticated: authReducer
+  auth: authReducer
 })
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);

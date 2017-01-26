@@ -20,30 +20,31 @@ const validate = values => {
   return errors;
 }
 
-class LoginContainer extends Component {
-  handleSubmit = (values) => {
-    console.log(values)
-  //  this.props.signIn(values)
+class Login extends Component {
+  handleFormSubmit = (values) => {
+    this.props.signIn(values)
   }
 
-  renderAuthenticationError() {
-    if (this.props.authenticationError) {
-      return <div className="alert alert-danger">{ this.props.authenticationError }</div>;
-    }
-      return <div></div>;
-  }
+  renderField = ({ input, label, type, meta: {touched, error} }) => (
+    <fieldset className={`form-group ${touched && error ? 'has-error' : ''}`}>
+      <label className="control-label">{label}</label>
+      <div>
+        <input {...input} placeholder={label} className="form-control" type={type} />
+        {touched && error && <div className="help-block"> {error} </div>}
+      </div>
+    </fieldset>
+  );
 
   render () {
     return (
       <div className="login-page-container">
         <div className="login-form">
           <h1> Login </h1>
-            { this.renderAuthenticationError() }
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.props.handleSubmit(this.handleFormSubmit)}>
             <FontAwesome className="super-crazy-colors" size="2x" name="user" />
-            <Field className="form-control" component="input" type="email" name="email" placeholder="Email"/><br/>
+            <Field className="form-control" component={this.renderField} type="email" name="email" placeholder="Email"/><br/>
             <FontAwesome className="fa fa-lock" name="lock" aria-hidden="true" />
-            <Field className="form-control" component="input" type="password" name="pw" placeholder="Password"/><br/>
+            <Field className="form-control" component={this.renderField} type="password" name="pw" placeholder="Password"/><br/>
             <button type="submit" className="btn btn-primary">Login</button>
           </form>
         </div>
@@ -53,10 +54,10 @@ class LoginContainer extends Component {
 }
 
 function mapStateToProps(state){
-  return { authenticationError: state.auth.error}
+  return { authenticated: state.auth.authenticated}
 }
 
 export default connect(mapStateToProps, actions)(reduxForm({
   form: 'login',
   validate
-})(LoginContainer));
+})(Login));

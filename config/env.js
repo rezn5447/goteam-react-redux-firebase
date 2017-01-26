@@ -2,7 +2,7 @@
 // injected into the application via DefinePlugin in Webpack configuration.
 
 var REACT_APP = /^REACT_APP_/i;
-var BLAH      = 
+var BLAH      = "AIzaSyA2a-QiA8WqXuSdWC8VZpLngp4545QzZNs"
 function getClientEnvironment(publicUrl) {
   var processEnv = Object
     .keys(process.env)

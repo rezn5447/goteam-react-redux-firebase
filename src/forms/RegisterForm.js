@@ -24,6 +24,6 @@ const RegisterForm = (props) => {
     )
   }
 
-export default reduxForm({
+export default connect(null,Actions)(reduxForm({
   form: 'register'
-})(RegisterForm)
+})(RegisterForm))

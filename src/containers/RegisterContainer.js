@@ -38,26 +38,19 @@ const validate = values => {
   return errors;
 }
 
-class RegisterContainer extends Component {
-  handleSubmit = (values) => {
+class Register extends Component {
+  handleFormSubmit = (values) => {
     console.log(values)
     this.props.createUser(values)
   }
-  renderAuthenticationError(){
-    if(this.props.authenticationError){
-      return <div className="alert alert-danger">{this.props.authenticationError} </div>;
 
-    }else{
-      return <div></div>;
-    }
-  }
   render () {
     return (
       <div className="register-page-container">
         <div className="register-form">
         <h1>Register as New User</h1>
-          {this.renderAuthenticationError()}
-          <form onSubmit={this.handleSubmit}>
+
+          <form onSubmit={this.props.handleSubmit(this.handleFormSubmit)}>
             <fieldset className="register-div">
               <Field className="form-control" component="input" type="name" name="first_Name" placeholder="First Name"/>
               <Field className="form-control" component="input" type="name" name="last_name" placeholder="Last Name"/>
@@ -77,12 +70,13 @@ class RegisterContainer extends Component {
     )
   }
 }
+
 function mapStateToProps(state){
   return {
-    authenticationError: state.auth.authenticationError
+    authenticated: state.auth.authenticated
   }
 }
 export default connect(mapStateToProps, actions)(reduxForm({
   form: 'register',
   validate
-})(RegisterContainer));
+})(Register));
