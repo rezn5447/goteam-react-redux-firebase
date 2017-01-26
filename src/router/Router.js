@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import RequireAuth from '../containers/RequireAuth'
 import ProfileContainer from '../containers/ProfileContainer';
-import HomeContainer from '../containers/HomeContainer';
-import LoginContainer from '../containers/LoginContainer';
-import RegisterContainer from '../containers/RegisterContainer';
-import SportsContainer from '../containers/SportsContainer';
-import FindMatchesContainer from '../containers/FindMatchesContainer';
+import Home from '../containers/HomeContainer';
+import Login from '../containers/LoginContainer';
+import Register from '../containers/RegisterContainer';
+import Sports from '../containers/SportsContainer';
+import FindMatches from '../containers/FindMatchesContainer';
 import MainLayout from '../containers/MainLayout';
 
 class MyRouter extends Component {
@@ -13,16 +14,14 @@ class MyRouter extends Component {
     return(
       <Router history={browserHistory}>
         <Route path={"/"} component={MainLayout}>
-          <IndexRoute component={HomeContainer} />
-          <Route path={"home"} component={HomeContainer} />
-          <Route path={"login"} component={LoginContainer} />
-          <Route path={"register"} component={RegisterContainer} onEnter={this.redirectToProfile}/>
+          <Route path={"login"} component={Login} />
+          <Route path={"register"} component={Register}/>
 
 // Need to separate this area with authentication verification properly //
-          <Route path={"users/:user_ID"} component={ProfileContainer} >
-            <Route path={"home"} component={HomeContainer} />
-            <Route path={"sports"} component={SportsContainer} />
-            <Route path={"play"} component={FindMatchesContainer}/>
+          <Route path={"home"} component={RequireAuth(Home)} />
+          <Route path={"users/:user_ID"} component={RequireAuth(ProfileContainer)} >
+            <Route path={"sports"} component={RequireAuth(Sports)} />
+            <Route path={"play"} component={RequireAuth(FindMatches)}/>
           </Route>
         </Route>
       </Router>
