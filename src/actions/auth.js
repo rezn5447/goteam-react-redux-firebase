@@ -11,9 +11,10 @@ export function signIn(values){
   return dispatch => {
     firebaseAuth.signInWithEmailAndPassword(values.email, values.pw)
     .then(response => {
-      console.log(currentUser.uid)
+      const userUid = firebaseAuth.currentUser.uid;
+      console.log(userUid)
       dispatch(authUser());
-      browserHistory.push(`users/${currentUser}`);
+      browserHistory.push(`users/${userUid}`);
     })
     .catch(error => {
       console.log(error);
@@ -27,6 +28,8 @@ export function registerUser(values){
     firebaseAuth.createUserWithEmailAndPassword(values.email, values.pw)
     .then(response => {
       dispatch(authUser());
+      const userUid = firebaseAuth.currentUser.uid;
+      console.log(userUid)
       browserHistory.push('users/:user_ID');
     })
     .catch(error => {

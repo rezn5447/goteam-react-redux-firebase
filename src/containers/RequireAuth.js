@@ -9,16 +9,15 @@ export default function(WrappedComponent){
         let hasLocalStorageUser = false;
 
         for(let key in localStorage){
-          if (key.startsWith("firebase:authUser:")){
+          if (key.startsWith("firebase:authUser:")) {
             hasLocalStorageUser = true;
-          }
         }
+      }
 
-        if(!hasLocalStorageUser){
-          browserHistory.push('/login');
-        }
+      if(!hasLocalStorageUser) {
+        browserHistory.push('login');
+      }
     }
-
   }
 
   render(){
@@ -26,10 +25,9 @@ export default function(WrappedComponent){
   }
 }
 
-function mapStateToProps(state){
-  return { authenticated: state.authenticated }
-}
+  function mapStateToProps(state){
+    return { authenticated: state.auth.authenticated }
+  }
 
-return connect(mapStateToProps)(Auth);
-
+  return connect(mapStateToProps)(Auth);
 }
