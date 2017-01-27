@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { firebaseAuth } from '../helpers/database'
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import * as actions from '../actions/user';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from "react-router";
+import { Link, browserHistory } from 'react-router';
 import * as actions from '../actions/auth';
 import logo from '../assets/images/logo2.png';
 
@@ -15,16 +15,16 @@ class Header extends Component{
     if(this.props.authenticated){
       return(
         <div className="login-header">
-          <Link to="users/:user_ID">My Profile</Link> |
-          <Link to="users/:user_ID/sports"> Play!</Link> |
+          <Link to={`/users/${this.props.user.id}`}>My Profile</Link> |
+          <Link to={`/users/${this.props.user.id}/sports`}> Play!</Link> |
           <a onClick={this.handleSubmit}> Logout</a>
         </div>
         )
     } else {
       return (
         <div className="login-header">
-          <Link to="login">Login</Link> |
-          <Link to="register"> Register</Link>
+          <Link to="/login">Login</Link> |
+          <Link to="/register"> Register</Link>
         </div>
       )
     }
@@ -34,11 +34,11 @@ class Header extends Component{
     return(
       <header>
         <div className="header-left">
-          <Link to="home"><img src={logo} alt="go-team-logo" />
+          <Link to="/home"><img src={logo} alt="go-team-logo" />
           </Link>
         </div>
         <div className="header-middle">
-          <Link to="home">GO TEAM!</Link>
+          <Link to="/home">GO TEAM!</Link>
         </div>
         <div className="header-right">
           {this.userActions()}
@@ -49,7 +49,6 @@ class Header extends Component{
 }
 
 function mapStateToProps(state){
-console.log(state)
 return { authenticated: state.auth.authenticated,
          user: state.user }
 }

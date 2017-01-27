@@ -1,22 +1,16 @@
-import { ref } from '../helpers/database';
+import { ref, firebaseAuth } from '../helpers/database';
 import _ from 'lodash';
-// import {
-//   FETCH_USER,
-//   UPDATE_USER,
-//   CREATE_USER
-// } from './types';
 import {
   FETCH_USER,
   FETCH_USER_MATCHES,
   FETCH_USER_STATS,
 } from './types';
 
-const userRef = ref.child('users/0');
-const userMatchesRef = ref.child('users/0/matches')
 
 export function fetchUser(){
   return dispatch => {
-    userRef.on('value', snapshot => {
+    let id = firebaseAuth.currentUser.uid
+    ref.child(`users/${id}`).on('value', snapshot => {
       dispatch({
         type: FETCH_USER,
         payload: snapshot.val()
@@ -27,7 +21,8 @@ export function fetchUser(){
 
 export function fetchUserMatches(){
   return dispatch => {
-    userMatchesRef.on('value', snapshot => {
+    let id = firebaseAuth.currentUser.uid
+    ref.child(`users/${id}/matches`).on('value', snapshot => {
       dispatch({
         type: FETCH_USER_MATCHES,
         payload: snapshot.val()
@@ -38,7 +33,8 @@ export function fetchUserMatches(){
 
 export function fetchUserStats(){
   return dispatch => {
-    userRef.on('value', snapshot => {
+    let id = firebaseAuth.currentUser.uid
+    ref.child(`users/${id}/stats`).on('value', snapshot => {
       dispatch({
         type: FETCH_USER_STATS,
         payload: snapshot.val()
