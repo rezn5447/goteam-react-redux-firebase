@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { firebaseAuth } from '../helpers/database'
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import * as actions from '../actions/user';
+import * as actions from '../actions/auth';
 import Profile  from '../components/Profile';
 import MatchItem  from '../components/MatchItem';
 import '../assets/stylesheets/users.scss';
@@ -33,7 +32,7 @@ class ProfileContainer extends Component {
 }
 
 function mapStateToProps(state){
-console.log(state)
+console.log(`whatever ${state.user}`)
 return { user: state.user,
          matches: state.user.matches }
 }
