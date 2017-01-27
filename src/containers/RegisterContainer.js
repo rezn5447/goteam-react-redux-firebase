@@ -40,8 +40,7 @@ const validate = values => {
 
 class Register extends Component {
   handleFormSubmit = (values) => {
-    console.log(values)
-    this.props.createUser(values)
+    this.props.registerUser(values)
   }
 
   render () {
@@ -52,13 +51,13 @@ class Register extends Component {
 
           <form onSubmit={this.props.handleSubmit(this.handleFormSubmit)}>
             <fieldset className="register-div">
-              <Field className="form-control" component="input" type="name" name="first_Name" placeholder="First Name"/>
-              <Field className="form-control" component="input" type="name" name="last_name" placeholder="Last Name"/>
+              <Field className="form-control" component="input" type="text" name="first_Name" placeholder="First Name"/>
+              <Field className="form-control" component="input" type="text" name="last_name" placeholder="Last Name"/>
               <Field className="form-control" component="input" type="email" name="email" placeholder="Email"/><br/>
-              <Field className="form-control" component="input" type="address" name="street" placeholder="Street"/>
-              <Field className="form-control" component="input" type="city" name="city" placeholder="City"/>
-              <Field className="form-control" component="input" type="state" name="state" placeholder="State"/>
-              <Field className="form-control" component="input" type="zip" name="zip" placeholder="Zip"/><br/>
+              <Field className="form-control" component="input" type="text" name="street" placeholder="Street"/>
+              <Field className="form-control" component="input" type="text" name="city" placeholder="City"/>
+              <Field className="form-control" component="input" type="text" name="state" placeholder="State"/>
+              <Field className="form-control" component="input" type="text" name="zip" placeholder="Zip"/><br/>
               <Field className="form-control" component="input" type="password" name="pw" placeholder="Password"/>
               <Field className="form-control" component="input" type="password" name="pw-conf" placeholder="Confirm Password"/>
             <br/>

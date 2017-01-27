@@ -15,7 +15,7 @@ export default function(WrappedComponent){
       }
 
       if(!hasLocalStorageUser) {
-        browserHistory.push('login');
+        browserHistory.push('/login');
       }
     }
   }

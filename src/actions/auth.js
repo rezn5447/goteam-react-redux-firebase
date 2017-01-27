@@ -1,4 +1,4 @@
-import { firebaseAuth, currentUser } from '../helpers/database';
+import { firebaseAuth, ref} from '../helpers/database';
 import { browserHistory } from 'react-router';
 import _ from 'lodash';
 import {
@@ -12,9 +12,8 @@ export function signIn(values){
     firebaseAuth.signInWithEmailAndPassword(values.email, values.pw)
     .then(response => {
       const userUid = firebaseAuth.currentUser.uid;
-      console.log(userUid)
       dispatch(authUser());
-      browserHistory.push(`users/${userUid}`);
+      browserHistory.push(`/users/${userUid}`);
     })
     .catch(error => {
       console.log(error);
@@ -29,8 +28,8 @@ export function registerUser(values){
     .then(response => {
       dispatch(authUser());
       const userUid = firebaseAuth.currentUser.uid;
-      console.log(userUid)
-      browserHistory.push('users/:user_ID');
+      saveUserInfo(values, userUid)
+      browserHistory.push(`users/${userUid}`);
     })
     .catch(error => {
       console.log(error);
@@ -39,8 +38,18 @@ export function registerUser(values){
    }
 }
 
+export function pushToProfile(){
+    const userUid = firebaseAuth.currentUser.uid;
+    browserHistory.push(`/users/${userUid}`);
+}
+
+export function saveUserInfo(info,userUid){
+  ref.child('users').child(userUid).set({info})
+}
+
+
 export function signOut() {
-  browserHistory.push('login');
+  browserHistory.push('/login');
 
   return {
     type: SIGN_OUT_USER,
@@ -52,7 +61,7 @@ export function verifyAuth(){
   return dispatch => {
     firebaseAuth.onAuthStateChanged( user =>{
       if(user){
-        console.log(user)
+        console.log(user.uid)
         dispatch(authUser())
       } else {
         console.log("No user")
