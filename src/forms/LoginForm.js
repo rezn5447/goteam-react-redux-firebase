@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import FontAwesome from 'react-fontawesome';
+
 
 const LoginForm = (props) => {
   const { handleSubmit } = props;

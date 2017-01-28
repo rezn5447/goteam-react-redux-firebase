@@ -2,10 +2,23 @@ import { firebaseAuth, ref} from '../helpers/database';
 import { browserHistory } from 'react-router';
 import _ from 'lodash';
 import {
+  FETCH_USER,
   AUTH_USER,
   SIGN_OUT_USER,
   AUTH_ERROR
 } from './types';
+
+export function fetchUser(){
+  var user = firebaseAuth.currentUser.uid;
+  return function(dispatch) {
+    ref.child("users").child(`${user}`).on('child_added', snapshot => {
+      dispatch({
+        type: FETCH_USER,
+        payload: snapshot.val()
+      });
+    });
+  };
+}
 
 export function signIn(values){
   return dispatch => {
@@ -44,11 +57,21 @@ export function pushToProfile(){
 }
 
 export function saveUserInfo(info,userUid){
-  ref.child('users').child(userUid).set({info})
+  ref.child('users').child(userUid).child('info').set({
+    first_name: info.first_name,
+    last_name : info.last_name,
+    email: info.email,
+    street: info.street,
+    city  : info.city,
+    state: info.state,
+    password: info.pw,
+    uid: userUid,
+    matches: {}
+  })
 }
 
-
 export function signOut() {
+  firebaseAuth.signOut();
   browserHistory.push('/login');
 
   return {
@@ -61,7 +84,8 @@ export function verifyAuth(){
   return dispatch => {
     firebaseAuth.onAuthStateChanged( user =>{
       if(user){
-        console.log(user.uid)
+        const userUID = user.uid;
+        console.log(`still logged in with user ${userUID}`)
         dispatch(authUser())
       } else {
         console.log("No user")

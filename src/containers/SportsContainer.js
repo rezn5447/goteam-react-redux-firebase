@@ -4,7 +4,7 @@ import SportItem  from '../components/SportItem';
 import _ from 'lodash';
 import * as actions from '../actions/sports';
 
-class SportsContainer extends Component {
+class Sports extends Component {
   componentWillMount(){
     this.props.fetchSports();
   }
@@ -27,8 +27,9 @@ class SportsContainer extends Component {
 }
 
 function mapStateToProps(state) {
-  return { sports: state.sports };
+  return { sports: state.sports,
+            user:  state.user   }
 
 }
 
-export default connect(mapStateToProps, actions)(SportsContainer);
+export default connect(mapStateToProps, actions)(Sports);

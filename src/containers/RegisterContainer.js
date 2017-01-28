@@ -5,10 +5,10 @@ import * as actions from '../actions/auth';
 
 const validate = values => {
   const errors = {};
-  if(!values.first_Name){
+  if(!values.first_name){
     errors.password = "Please enter you First Name";
   }
-  if(!values.last_Name){
+  if(!values.last_name){
     errors.password = "Please enter a password";
   }
   if(!values.email) {
@@ -51,7 +51,7 @@ class Register extends Component {
 
           <form onSubmit={this.props.handleSubmit(this.handleFormSubmit)}>
             <fieldset className="register-div">
-              <Field className="form-control" component="input" type="text" name="first_Name" placeholder="First Name"/>
+              <Field className="form-control" component="input" type="text" name="first_name" placeholder="First Name"/>
               <Field className="form-control" component="input" type="text" name="last_name" placeholder="Last Name"/>
               <Field className="form-control" component="input" type="email" name="email" placeholder="Email"/><br/>
               <Field className="form-control" component="input" type="text" name="street" placeholder="Street"/>

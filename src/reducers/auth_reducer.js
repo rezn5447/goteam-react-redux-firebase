@@ -7,7 +7,8 @@ import {
 
 const initialState =  {
   authenticated: false,
-  error: null
+  error: null,
+  user: {}
 };
 
 export default function(state = initialState, action) {
