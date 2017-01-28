@@ -11,13 +11,11 @@ import {
 export function fetchUser(){
   var user = firebaseAuth.currentUser.uid;
   return function(dispatch) {
-    console.log(`jfdkl;asfjkldj;ads   ${user}`)
-    ref.child("users").child(user).on('value', snapshot => {
+    ref.child("users").child(`${user}`).on('child_added', snapshot => {
       dispatch({
         type: FETCH_USER,
         payload: snapshot.val()
       });
-      console.log(snapshot.val())
     });
   };
 }

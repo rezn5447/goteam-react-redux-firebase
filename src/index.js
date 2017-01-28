@@ -11,7 +11,7 @@ import sportReducer from './reducers/sport_reducer';
 import authReducer from './reducers/auth_reducer';
 import MyRouter from './router/Router';
 
-
+import FontAwesome from 'react-fontawesome';
 import './assets/stylesheets/index.scss';
 import './assets/stylesheets/main_layout.scss';
 import './assets/stylesheets/home.scss';
@@ -44,4 +44,4 @@ ReactDOM.render(
 
 // setup Firebase listeners
 
- store.dispatch(actions.verifyAuth())
+ // store.dispatch(actions.verifyAuth())

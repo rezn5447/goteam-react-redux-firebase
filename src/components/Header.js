@@ -15,8 +15,8 @@ class Header extends Component{
     if(this.props.authenticated){
       return(
         <div className="login-header">
-          <Link to={`/users/${this.props.user.id}`}>My Profile</Link> |
-          <Link to={`/users/${this.props.user.id}/sports`}> Play!</Link> |
+          <Link to={`/users/${this.props.user.uid}`}>My Profile</Link> |
+          <Link to={`/sports`}> Play!</Link> |
           <a onClick={this.handleSubmit}> Logout</a>
         </div>
         )
