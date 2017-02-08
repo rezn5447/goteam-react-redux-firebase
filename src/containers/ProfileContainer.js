@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import * as actions from '../actions/auth';
-import FontAwesome from 'react-fontawesome';
 import Profile  from '../components/Profile';
 import MatchItem  from '../components/MatchItem';
 import '../assets/stylesheets/users.scss';
@@ -16,9 +15,9 @@ class ProfileContainer extends Component {
 
   renderProfileImage(){
     if(!this.props.user.imgUrl){
-    return <div className="profile-pic"><img src="male_avatar.jpg"></img></div>
+    return <div className="profile-pic"><img src="male_avatar.jpg" alt="default-avatar"></img></div>
     }else {
-    return <div className="img"><img src="">  </img></div>
+    return <div className="img"><img src={this.props.user.imgUrl} alt={this.props.user.first_name}>  </img></div>
     }
   }
   renderMatches(){
