@@ -1,18 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../actions/sports';
+import React from 'react';
 
-class MatchItem extends Component {
-
-  render(){
-  return(
+export const MatchItem = (props) => {
+  return (
     <li className="list-group-item" id={this.props.id}>
        Type: {this.props.type} <br/>
        Time: {this.props.date} <br/>
        Place: {this.props.location}
     </li>
-    );
-  }
+  );
 }
-
-export default connect(null, actions)(MatchItem);
