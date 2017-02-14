@@ -19,7 +19,7 @@ This React project has :
 # Concept & Introduction
 
 ### ------- Main Problem ------------
-It is generally difficult to find casual pick-up games across most recreational activities, and more often than not, the skill variance amongst athletes greatly reduce the overall quality of such games.
+It is generally difficult to find casual pick-up games across most recreational activities, and more often than not, the skill variance amongst athletes greatly reduces the overall quality of such games.
 
 ### ------- Solution ---------------
 This application is meant to provide matchmaking service and automation for casual athletes across all popular sports with an exciting and easy to use interface. 
