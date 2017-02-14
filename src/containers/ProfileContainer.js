@@ -4,6 +4,7 @@ import _ from 'lodash';
 import * as actions from '../actions/auth';
 import Profile  from '../components/Profile';
 import MatchItem  from '../components/MatchItem';
+import DefaultPic from '../assets/images/profile_pic/male_avatar.png'
 import '../assets/stylesheets/users.scss';
 
 
@@ -12,12 +13,12 @@ class ProfileContainer extends Component {
   componentWillMount(){
     this.props.fetchUser();
   }
-
+  
   renderProfileImage(){
     if(!this.props.user.imgUrl){
-    return <div className="profile-pic"><img src="male_avatar.jpg" alt="default-avatar"></img></div>
+    return <div className="profile-pic"><img src={DefaultPic} alt="default-avatar"></img></div>
     }else {
-    return <div className="img"><img src={this.props.user.imgUrl} alt={this.props.user.first_name}>  </img></div>
+    return <div className="profile-pic"><img src={this.props.user.imgUrl} alt={this.props.user.first_name}>  </img></div>
     }
   }
   renderMatches(){
@@ -35,7 +36,7 @@ class ProfileContainer extends Component {
       <div id="user-show-page-container">
         <div className="user-show-container">
           <div className="user-info-container">
-
+            {this.renderProfileImage()}
             <Profile userInfo={this.props.user} />
             <ul className="list-group">
               {this.renderMatches()}

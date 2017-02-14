@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import * as actions from './actions/auth';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as reduxFormReducer } from 'redux-form';
 
@@ -10,8 +9,6 @@ import userReducer from './reducers/user_reducer';
 import sportReducer from './reducers/sport_reducer';
 import authReducer from './reducers/auth_reducer';
 import MyRouter from './router/Router';
-
-import FontAwesome from 'react-fontawesome';
 import './assets/stylesheets/index.scss';
 import './assets/stylesheets/main_layout.scss';
 import './assets/stylesheets/home.scss';
