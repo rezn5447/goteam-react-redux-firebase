@@ -19,17 +19,22 @@ class Profile extends Component {
       <div>
         <p>
           <FontAwesome className="fa fa-user-circle" name="circle" aria-hidden="true"/>
-            Name: { this.props.userInfo.first_name} {this.props.userInfo.last_name}
+            <span className="profile">
+              Name: { this.props.userInfo.first_name} {this.props.userInfo.last_name}
+            </span>
         </p>
         <p>
           <FontAwesome className="fa fa-envelope-square" name=""  aria-hidden="true"/>
-            Email: {this.props.userInfo.email}
+            <span className="profile">
+              Email: {this.props.userInfo.email}
+            </span>
         </p>
         <p>
         <FontAwesome className="fa fa-building" name="building" aria-hidden="true"/>
-        Street: {this.props.userInfo.street} {this.props.userInfo.city} {this.props.userInfo.state} {this.props.userInfo.zip}
+          <span className="profile">
+            Street: {this.props.userInfo.street} {this.props.userInfo.city} {this.props.userInfo.state} {this.props.userInfo.zip}
+          </span>
         </p>
-        <p>City: {this.props.userInfo.city}</p>
       </div>
     );
   }
