@@ -13,7 +13,7 @@ class ProfileContainer extends Component {
   componentWillMount(){
     this.props.fetchUser();
   }
-  
+
   renderProfileImage(){
     if(!this.props.user.imgUrl){
     return <div className="profile-pic"><img src={DefaultPic} alt="default-avatar"></img></div>
@@ -38,9 +38,11 @@ class ProfileContainer extends Component {
           <div className="user-info-container">
             {this.renderProfileImage()}
             <Profile userInfo={this.props.user} />
-            <ul className="list-group">
+
+          <div className="matches-container">
+            <h4>Upcoming Matches:</h4>
               {this.renderMatches()}
-            </ul>
+          </div>
           </div>
         </div>
       </div>
