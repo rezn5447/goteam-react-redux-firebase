@@ -18,15 +18,15 @@ class Profile extends Component {
   return(
       <div>
         <p>
-          <FontAwesome className="fa fa-user-circle" name="circle"aria-hidden="true"/>
-            { this.props.userInfo.first_name} {this.props.userInfo.last_name}
+          <FontAwesome className="fa fa-user-circle" name="circle" aria-hidden="true"/>
+            Name: { this.props.userInfo.first_name} {this.props.userInfo.last_name}
         </p>
         <p>
-          <FontAwesome className="fa fa-envelope-square" aria-hidden="true"/>
+          <FontAwesome className="fa fa-envelope-square" name=""  aria-hidden="true"/>
             Email: {this.props.userInfo.email}
         </p>
         <p>
-        <FontAwesome className="fa fa-building" aria-hidden="true"/>
+        <FontAwesome className="fa fa-building" name="building" aria-hidden="true"/>
         Street: {this.props.userInfo.street} {this.props.userInfo.city} {this.props.userInfo.state} {this.props.userInfo.zip}
         </p>
         <p>City: {this.props.userInfo.city}</p>
